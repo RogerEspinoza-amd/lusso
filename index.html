@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>LUSSO Salón Boutique | Miraflores — CRM & Landing Page</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💅</text></svg>">
+</head>
+<body>
+
+  <!-- ================= TOP SYSTEM SWITCHER BAR ================= -->
+  <header class="top-system-bar">
+    <div class="system-brand">
+      <span>✨ LUSSO</span>
+      <span class="system-badge">Boutique Miraflores</span>
+    </div>
+    
+    <div class="view-switcher-group">
+      <button id="btn-switch-landing" class="switcher-btn active" title="Ver sitio web público para clientas">
+        🌐 Landing Page
+      </button>
+      <button id="btn-switch-crm" class="switcher-btn" title="Ver panel administrativo y base de datos">
+        💼 Sistema CRM
+      </button>
+    </div>
+
+    <div class="system-location-tag">
+      <span>📍 Calle Berlín 481, Miraflores</span>
+    </div>
+  </header>
+
+  <!-- ================= VIEW 1: LANDING PAGE PÚBLICA ================= -->
+  <div id="view-landing" class="view-wrapper">
+    
+    <!-- Landing Navigation -->
+    <nav class="landing-header">
+      <div class="landing-nav">
+        <div class="nav-brand">
+          <span class="nav-brand-title">LUSSO</span>
+          <span class="nav-brand-sub">Salón Boutique</span>
+        </div>
+        <div class="landing-nav-links">
+          <a href="#hero" class="nav-link">Inicio</a>
+          <a href="#catalogo" class="nav-link">Servicios & Precios</a>
+          <a href="#equipo" class="nav-link">Nuestro Equipo</a>
+          <a href="#ubicacion" class="nav-link">Ubicación</a>
+          <a href="#faq" class="nav-link">Preguntas</a>
+          <button class="nav-btn-book" onclick="window.lussoLanding.openBookingModal()">
+            Agendar Cita ✨
+          </button>
+        </div>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text-content">
+          <div class="hero-pill-badge">
+            <span>✨ Experiencia Boutique en Miraflores</span>
+          </div>
+          <h1 class="hero-title">
+            Tu espacio íntimo de <em>cuidado y elegancia</em>
+          </h1>
+          <p class="hero-desc">
+            Atención personalizada de una estilista y una manicurista dedicadas. Especialistas en Manicure Gel UV, tratamientos capilares con aceite de argán, colorimetría y diseño de cejas con precios claros.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary-hero" onclick="window.lussoLanding.openBookingModal()">
+              <span>Agendar Cita por WhatsApp</span> 💬
+            </button>
+            <a href="#catalogo" class="btn-secondary-hero">
+              Ver Catálogo de Precios
+            </a>
+          </div>
+          <div class="hero-features-list">
+            <div class="hero-feat-item">💅 Manicure Gel UV Best Seller</div>
+            <div class="hero-feat-item">🧴 Sello de Aceite de Argán</div>
+            <div class="hero-feat-item">🎨 Productos OPI & Alfaparf</div>
+          </div>
+        </div>
+
+        <div class="hero-card-preview">
+          <div class="hero-glass-card">
+            <div class="hero-card-header">
+              <span class="hero-card-badge">Servicios Destacados</span>
+              <h3 class="hero-card-title">Favoritos de la Semana</h3>
+            </div>
+            <div class="hero-card-services">
+              <div class="hero-service-row">
+                <div>
+                  <div class="hero-s-title">Manicure Gel UV</div>
+                  <div class="hero-s-spec">Atiende: Cielo (Nail Artist)</div>
+                </div>
+                <div class="hero-s-price">S/ 60</div>
+              </div>
+              <div class="hero-service-row">
+                <div>
+                  <div class="hero-s-title">Alisado Orgánico Marroquí</div>
+                  <div class="hero-s-spec">Atiende: Kiara (Estilista)</div>
+                </div>
+                <div class="hero-s-price">Desde S/ 200</div>
+              </div>
+              <div class="hero-service-row">
+                <div>
+                  <div class="hero-s-title">Pedicure Spa Premium OPI</div>
+                  <div class="hero-s-spec">Atiende: Cielo (Nail Artist)</div>
+                </div>
+                <div class="hero-s-price">S/ 70</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signature Brand Pillars -->
+    <section class="signature-section">
+      <div class="signature-container">
+        <div class="sig-card">
+          <div class="sig-icon">🌿</div>
+          <h4 class="sig-title">Sello de Aceite de Argán</h4>
+          <p class="sig-desc">Todos nuestros rituales de cabello incluyen nutrición con argán puro para un brillo y suavidad extrema.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-icon">💅</div>
+          <h4 class="sig-title">Especialistas OPI & Gel</h4>
+          <p class="sig-desc">Técnicas de manicura y pedicura con productos originales de alta gama que respetan tu uña natural.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-icon">☕</div>
+          <h4 class="sig-title">Experiencia Boutique 1 a 1</h4>
+          <p class="sig-desc">Ambiente tranquilo y sin prisas. Café de cortesía, bebidas refrescantes y atención dedicada exclusivamente a ti.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-icon">🏷️</div>
+          <h4 class="sig-title">Precios Transparentes</h4>
+          <p class="sig-desc">Sin sorpresas en caja. Tarifas claras según el largo de tu cabello o técnica elegida.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Services Catalog -->
+    <section id="catalogo" class="catalog-section">
+      <div class="section-header-centered">
+        <span class="section-subtitle">Carta de Servicios</span>
+        <h2 class="section-title">Encuentra tu ritual ideal</h2>
+        <p class="section-desc">Selecciona una categoría o busca el servicio que deseas realizarte en nuestro salón boutique.</p>
+      </div>
+
+      <div class="catalog-controls">
+        <div class="catalog-search-box">
+          <span class="search-icon-pos">🔍</span>
+          <input type="text" id="catalog-search" class="catalog-search-input" placeholder="Buscar por servicio (ej. Gel, Mechas, Bótox, Cejas)...">
+        </div>
+
+        <div class="category-pills-row">
+          <button class="cat-pill active" data-cat="all">✨ Todos</button>
+          <button class="cat-pill" data-cat="manicure">💅 Manicure</button>
+          <button class="cat-pill" data-cat="pedicure">🦶 Pedicure</button>
+          <button class="cat-pill" data-cat="corte">✂️ Corte</button>
+          <button class="cat-pill" data-cat="color">🎨 Colorimetría</button>
+          <button class="cat-pill" data-cat="tratamientos">✨ Tratamientos & Alisados</button>
+          <button class="cat-pill" data-cat="tradicionales">💇‍♀️ Cejas & Tradicionales</button>
+          <button class="cat-pill" data-cat="retiros">🧴 Retiros</button>
+        </div>
+      </div>
+
+      <div id="services-grid" class="services-grid">
+        <!-- Rendered dynamically by js/landing.js -->
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipo" class="team-section">
+      <div class="team-container">
+        <div class="section-header-centered">
+          <span class="section-subtitle">Conoce a Nuestras Especialistas</span>
+          <h2 class="section-title">Manos expertas y dedicadas</h2>
+          <p class="section-desc">En LUSSO te atienden directamente nuestras especialistas de cabecera.</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Kiara -->
+          <div class="team-card">
+            <div class="team-avatar-box">💇‍♀️</div>
+            <div class="team-info">
+              <h3 class="team-name">Kiara</h3>
+              <span class="team-role">Estilista Master & Colorista</span>
+              <p class="team-bio">
+                Especialista en visagismo, balayage, reconstrucción capilar con bótox y alisados orgánicos libres de formol. Su pasión es cuidar la salud de tu fibra con argán.
+              </p>
+              <div class="team-specialties">
+                <span class="specialty-tag">Corte & Brushing</span>
+                <span class="specialty-tag">Mechas Morena Iluminada</span>
+                <span class="specialty-tag">Bótox Capilar</span>
+                <span class="specialty-tag">Alisado Orgánico</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cielo -->
+          <div class="team-card">
+            <div class="team-avatar-box">💅</div>
+            <div class="team-info">
+              <h3 class="team-name">Cielo</h3>
+              <span class="team-role">Nail Artist & Esteticista</span>
+              <p class="team-bio">
+                Experta en manicura gel de larga duración, refuerzo rubber gel, extensiones de acrílico y polygel, lifting de pestañas y depilación con hilo orgánico.
+              </p>
+              <div class="team-specialties">
+                <span class="specialty-tag">Manicure Gel UV</span>
+                <span class="specialty-tag">Rubber Gel</span>
+                <span class="specialty-tag">Pedicure Spa OPI</span>
+                <span class="specialty-tag">Lifting & Cejas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="ubicacion" class="location-section">
+      <div class="location-grid">
+        <div class="location-info-card">
+          <span class="section-subtitle">Visítanos en Miraflores</span>
+          <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.5rem;">Información de Atención</h2>
+          
+          <div class="loc-item">
+            <div class="loc-icon">📍</div>
+            <div>
+              <div class="loc-title">Dirección</div>
+              <div class="loc-detail">Calle Berlín 481, Miraflores, Lima, Perú</div>
+            </div>
+          </div>
+
+          <div class="loc-item">
+            <div class="loc-icon">⏰</div>
+            <div>
+              <div class="loc-title">Horario de Atención</div>
+              <div class="loc-detail">Lunes a Sábado: 9:00 AM – 8:00 PM<br>Domingos: Previa cita</div>
+            </div>
+          </div>
+
+          <div class="loc-item">
+            <div class="loc-icon">💳</div>
+            <div>
+              <div class="loc-title">Medios de Pago Aceptados</div>
+              <div class="loc-detail">Efectivo, Tarjetas Visa/Mastercard (POS), Yape, Plin y Transferencia.</div>
+            </div>
+          </div>
+
+          <div class="loc-item">
+            <div class="loc-icon">💬</div>
+            <div>
+              <div class="loc-title">Reservas Directas</div>
+              <div class="loc-detail">WhatsApp: +51 993 511 745</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-map-card">
+          <h3 class="map-card-title">En el corazón de Miraflores</h3>
+          <p class="map-card-desc">
+            A pocas cuadras del Parque Kennedy. Un ambiente tranquilo, seguro y de fácil acceso para consentirte.
+          </p>
+          <a href="https://maps.google.com/?q=Calle+Berlin+481+Miraflores+Lima" target="_blank" class="btn-open-maps">
+            <span>Abrir en Google Maps</span> 🗺️
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <div class="faq-container">
+        <div class="section-header-centered">
+          <span class="section-subtitle">Preguntas Frecuentes</span>
+          <h2 class="section-title">Todo lo que necesitas saber</h2>
+        </div>
+
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>¿Cuánto dura el esmaltado en Gel UV?</span>
+            <span>➕</span>
+          </div>
+          <div class="faq-answer">
+            Nuestro servicio de Manicure Gel UV dura intacto entre 2 y 3 semanas sin descascararse, gracias a los esmaltes de alta gama OPI y curado con lámpara LED/UV profesional.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Qué incluye el ritual con Aceite de Argán?</span>
+            <span>➕</span>
+          </div>
+          <div class="faq-answer">
+            Todos nuestros servicios capilares (cortes, cepillados, tintes y alisados) finalizan con la aplicación de aceite puro de argán para sellar cutículas, dar brillo luminoso y proteger contra el calor.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Es necesario reservar cita con anticipación?</span>
+            <span>➕</span>
+          </div>
+          <div class="faq-answer">
+            Al ser un salón boutique con atención personalizada 1 a 1, recomendamos agendar tu cita vía WhatsApp con al menos 24 horas de anticipación para asegurarte el horario de tu preferencia con Kiara o Cielo.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Los alisados contienen formol?</span>
+            <span>➕</span>
+          </div>
+          <div class="faq-answer">
+            No. Utilizamos fórmulas de alisado orgánico y marroquí 100% libres de formol y químicos tóxicos, seguras para tu salud y con resultados de cabello suave y lacio natural.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3>LUSSO Salón Boutique</h3>
+          <p>Experiencia boutique en el corazón de Miraflores. Belleza personalizada, calidad superior y cuidado dedicado para ti.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#catalogo">Catálogo de Servicios</a></li>
+            <li><a href="#equipo">Conoce al Equipo</a></li>
+            <li><a href="#ubicacion">Cómo Llegar</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Administración</h4>
+          <ul class="footer-links">
+            <li><a href="#" id="btn-enter-crm-from-landing">Acceso Sistema CRM</a></li>
+            <li><a href="https://wa.me/51993511745" target="_blank">WhatsApp del Salón</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 LUSSO Salón Boutique. Todos los derechos reservados.</span>
+        <span>Miraflores, Lima — Perú</span>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp CTA -->
+    <a href="javascript:void(0)" onclick="window.lussoLanding.openBookingModal()" class="floating-whatsapp" title="Agendar cita por WhatsApp">
+      💬
+    </a>
+  </div>
+
+
+  <!-- ================= VIEW 2: SISTEMA CRM Y ADMINISTRACIÓN ================= -->
+  <div id="view-crm" class="view-wrapper hidden">
+    <div class="crm-layout">
+      
+      <!-- Sidebar Navigation -->
+      <aside class="crm-sidebar">
+        <div>
+          <div class="crm-sidebar-header">
+            <h2 class="crm-salon-title">LUSSO Hub</h2>
+            <span class="crm-salon-subtitle">Gestión & CRM Boutique</span>
+          </div>
+          <ul class="crm-nav-list">
+            <li class="crm-nav-item active" data-tab="dashboard">
+              <span class="crm-nav-icon">📊</span>
+              <span>Dashboard & Métricas</span>
+            </li>
+            <li class="crm-nav-item" data-tab="clients">
+              <span class="crm-nav-icon">👥</span>
+              <span>Directorio de Clientas</span>
+            </li>
+            <li class="crm-nav-item" data-tab="sales">
+              <span class="crm-nav-icon">💳</span>
+              <span>Punto de Venta / Cierre</span>
+            </li>
+            <li class="crm-nav-item" data-tab="inventory">
+              <span class="crm-nav-icon">📦</span>
+              <span>Inventario de Insumos</span>
+            </li>
+            <li class="crm-nav-item" data-tab="expenses">
+              <span class="crm-nav-icon">💰</span>
+              <span>Gastos & Facturas</span>
+            </li>
+            <li class="crm-nav-item" data-tab="backup">
+              <span class="crm-nav-icon">⚙️</span>
+              <span>Respaldo & Datos</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="crm-sidebar-footer">
+          <button id="btn-export-backup" class="btn-sidebar-backup">
+            💾 Exportar Copia de Seguridad
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main CRM Content Area -->
+      <main class="crm-main">
+
+        <!-- TAB 1: DASHBOARD -->
+        <section id="tab-dashboard" class="crm-tab-content active">
+          <div class="crm-header-row">
+            <div>
+              <h1 class="crm-view-title">Dashboard Operativo</h1>
+              <p class="crm-view-desc">Resumen integral de ventas, clientas y rendimiento del salón LUSSO.</p>
+            </div>
+            <button class="btn-primary" onclick="window.lussoCRM.switchTab('sales')">
+              <span>+ Registrar Servicio / Venta</span>
+            </button>
+          </div>
+
+          <!-- KPI Metrics Row -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <span class="kpi-label">Ingresos Totales (2026)</span>
+              <div id="kpi-total-revenue" class="kpi-val">S/ 0.00</div>
+              <span class="kpi-sub">Ventas acumuladas</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Servicios Atendidos</span>
+              <div id="kpi-total-sales" class="kpi-val">0</div>
+              <span class="kpi-sub">Transacciones registradas</span>
+            </div>
+            <div class="kpi-card kpi-purple">
+              <span class="kpi-label">Base de Clientas</span>
+              <div id="kpi-total-clients" class="kpi-val">0</div>
+              <span class="kpi-sub">Fichas registradas</span>
+            </div>
+            <div class="kpi-card kpi-emerald">
+              <span class="kpi-label">Tasa de Recurrencia</span>
+              <div id="kpi-recurrence-rate" class="kpi-val">0%</div>
+              <span class="kpi-sub">Clientas recurrentes</span>
+            </div>
+            <div class="kpi-card kpi-amber">
+              <span class="kpi-label">Insumos Críticos</span>
+              <div id="kpi-low-stock" class="kpi-val">0</div>
+              <span class="kpi-sub">Por debajo de stock mín.</span>
+            </div>
+          </div>
+
+          <!-- Analytics Charts Grid -->
+          <div class="dashboard-grid-2">
+            <!-- Production by Specialist -->
+            <div class="dashboard-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Producción por Especialista (S/)</h3>
+              </div>
+              <div id="chart-specialists"></div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="dashboard-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Desglose por Método de Pago</h3>
+              </div>
+              <div id="chart-payments"></div>
+            </div>
+          </div>
+
+          <!-- Second Row: Top Services & Low Stock Alerts -->
+          <div class="dashboard-grid-2">
+            <div class="dashboard-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Servicios Más Solicitados</h3>
+              </div>
+              <div id="list-top-services"></div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Alertas de Reposición de Insumos</h3>
+              </div>
+              <div id="dashboard-low-stock-list"></div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- TAB 2: CLIENT DIRECTORY & 360 CRM -->
+        <section id="tab-clients" class="crm-tab-content">
+          <div class="crm-header-row">
+            <div>
+              <h1 class="crm-view-title">Directorio de Clientas</h1>
+              <p class="crm-view-desc">Consulta historiales de servicios, fórmulas técnicas y estado de fidelización.</p>
+            </div>
+            <button class="btn-primary" onclick="window.lussoCRM.openNewClientModal()">
+              <span>+ Nueva Clienta</span>
+            </button>
+          </div>
+
+          <div class="card-table-wrapper">
+            <div class="table-toolbar">
+              <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="client-search-input" placeholder="Buscar por nombre, celular o notas...">
+              </div>
+              <div class="filter-btn-group">
+                <button class="filter-pill-btn client-filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-pill-btn client-filter-btn" data-filter="new">Nuevas (1)</button>
+                <button class="filter-pill-btn client-filter-btn" data-filter="recurrent">Frecuentes (2+)</button>
+              </div>
+              <span id="clients-count-badge" class="badge-specialist">0 clientas</span>
+            </div>
+
+            <table class="lusso-table">
+              <thead>
+                <tr>
+                  <th>Clienta</th>
+                  <th>Celular (WhatsApp)</th>
+                  <th>Tipo / Visitas</th>
+                  <th>Total Gastado</th>
+                  <th>Última Visita & Servicio</th>
+                  <th>Especialista Fav.</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="clients-table-body">
+                <!-- Rendered dynamically by js/crm.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+
+        <!-- TAB 3: POS / REGISTRO DE SERVICIOS & CIERRE DIARIO -->
+        <section id="tab-sales" class="crm-tab-content">
+          <div class="crm-header-row">
+            <div>
+              <h1 class="crm-view-title">Punto de Venta & Cierre Diario</h1>
+              <p class="crm-view-desc">Registra cobros de servicios al instante con historial visible para saber cuánto cobrar.</p>
+            </div>
+          </div>
+
+          <div class="pos-grid">
+            <!-- New Service POS Form -->
+            <div class="pos-form-card">
+              <h3 class="dash-card-title mb-3">Registrar Cobro de Servicio</h3>
+              
+              <form id="form-new-sale">
+                <div class="form-group">
+                  <label class="form-label">Fecha del Servicio</label>
+                  <input type="date" id="sale-date-input" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Nombre de la Clienta</label>
+                  <input type="text" id="sale-client-input" list="clients-datalist" class="form-input" placeholder="Escribe o selecciona de la lista..." autocomplete="off" required>
+                  <datalist id="clients-datalist"></datalist>
+                </div>
+
+                <!-- Live Client History Insight Box -->
+                <div id="pos-client-history-preview" style="display: none;"></div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label">Especialista</label>
+                    <select id="sale-specialist-select" class="form-select" required>
+                      <option value="Kiara">Kiara (Estilista)</option>
+                      <option value="Cielo">Cielo (Manicurista)</option>
+                      <option value="Mayra">Mayra</option>
+                      <option value="Didi">Didi</option>
+                      <option value="Moises">Moises</option>
+                      <option value="Juan Antonio">Juan Antonio</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Método de Pago</label>
+                    <select id="sale-payment-select" class="form-select" required>
+                      <option value="EFECTIVO">Efectivo</option>
+                      <option value="TARJETA">Tarjeta (POS)</option>
+                      <option value="QR">QR (Yape/Plin)</option>
+                      <option value="TRANSFERENCIA">Transferencia</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Servicio Realizado</label>
+                  <input type="text" id="sale-service-input" list="services-datalist" class="form-input" placeholder="Ej. Manicure Gel UV, Corte Tradicional..." required>
+                  <datalist id="services-datalist"></datalist>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Monto Cobrado (S/)</label>
+                  <input type="number" step="0.5" id="sale-amount-input" class="form-input" placeholder="0.00" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Notas / Fórmula / Observaciones</label>
+                  <textarea id="sale-notes-input" class="form-textarea" rows="2" placeholder="Tono de esmalte, fórmula de tinte, o comentarios..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary w-full" style="width: 100%; justify-content: center; padding: 14px;">
+                  💾 Registrar Cobro & Guardar en Historial
+                </button>
+              </form>
+            </div>
+
+            <!-- Daily Closing & Sales Table -->
+            <div>
+              <!-- Daily Summary Ribbon -->
+              <div class="sales-summary-ribbon">
+                <div class="sales-summary-box">
+                  <div class="summary-box-label">Total Período</div>
+                  <div id="sales-summary-total" class="summary-box-val">S/ 0.00</div>
+                </div>
+                <div class="sales-summary-box">
+                  <div class="summary-box-label">Efectivo</div>
+                  <div id="sales-summary-cash" class="summary-box-val text-emerald">S/ 0.00</div>
+                </div>
+                <div class="sales-summary-box">
+                  <div class="summary-box-label">Tarjeta (POS)</div>
+                  <div id="sales-summary-card" class="summary-box-val text-primary">S/ 0.00</div>
+                </div>
+                <div class="sales-summary-box">
+                  <div class="summary-box-label">QR (Yape/Plin)</div>
+                  <div id="sales-summary-qr" class="summary-box-val text-purple">S/ 0.00</div>
+                </div>
+              </div>
+
+              <!-- Filterable Sales Table -->
+              <div class="card-table-wrapper">
+                <div class="table-toolbar">
+                  <h3 class="dash-card-title">Registro de Transacciones</h3>
+                  <select id="sales-date-filter" class="form-select" style="width: auto; padding: 8px 12px; min-height: 40px;">
+                    <option value="all">Ver Todo el Historial</option>
+                    <option value="month">Este Mes</option>
+                    <option value="today">Solo Hoy</option>
+                  </select>
+                </div>
+
+                <table class="lusso-table">
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Clienta</th>
+                      <th>Especialista</th>
+                      <th>Servicio</th>
+                      <th>Monto</th>
+                      <th>Pago</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sales-table-body">
+                    <!-- Rendered dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- TAB 4: INVENTORY -->
+        <section id="tab-inventory" class="crm-tab-content">
+          <div class="crm-header-row">
+            <div>
+              <h1 class="crm-view-title">Control de Inventario & Insumos</h1>
+              <p class="crm-view-desc">Monitorea el stock técnico de tintes, esmaltes, químicos y bebidas con alertas automáticas.</p>
+            </div>
+            <button class="btn-primary" onclick="window.lussoCRM.openNewInventoryModal()">
+              <span>+ Nuevo Insumo</span>
+            </button>
+          </div>
+
+          <div class="card-table-wrapper">
+            <div class="table-toolbar">
+              <div class="filter-btn-group">
+                <select id="inventory-category-filter" class="form-select" style="width: auto; min-height: 40px;">
+                  <option value="all">Todas las Categorías</option>
+                  <option value="Capilar">Capilar (Alfaparf, Keratina, Argán)</option>
+                  <option value="Uñas">Uñas (OPI, Rubber, Acrílico)</option>
+                  <option value="Descartables">Descartables (Limas, Guantes, Toallas)</option>
+                  <option value="Bebidas">Bebidas (Café, Agua)</option>
+                </select>
+              </div>
+            </div>
+
+            <table class="lusso-table">
+              <thead>
+                <tr>
+                  <th>Insumo / Producto</th>
+                  <th>Categoría</th>
+                  <th>Stock Actual</th>
+                  <th>Stock Mínimo</th>
+                  <th>Costo Unit.</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="inventory-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+
+        <!-- TAB 5: EXPENSES & PETTY CASH -->
+        <section id="tab-expenses" class="crm-tab-content">
+          <div class="crm-header-row">
+            <div>
+              <h1 class="crm-view-title">Control de Gastos & Facturas</h1>
+              <p class="crm-view-desc">Registro de caja chica diaria y facturas de proveedores (Alfaparf, Probela, Servicios).</p>
+            </div>
+          </div>
+
+          <div class="sales-summary-ribbon mb-4">
+            <div class="sales-summary-box">
+              <div class="summary-box-label">Gastos Caja Chica</div>
+              <div id="summary-petty-cash" class="summary-box-val text-red">S/ 0.00</div>
+            </div>
+            <div class="sales-summary-box">
+              <div class="summary-box-label">Facturas Proveedores</div>
+              <div id="summary-invoices" class="summary-box-val text-red">S/ 0.00</div>
+            </div>
+            <div class="sales-summary-box">
+              <div class="summary-box-label">Total Egresos</div>
+              <div id="summary-all-expenses" class="summary-box-val text-burgundy">S/ 0.00</div>
+            </div>
+          </div>
+
+          <div class="dashboard-grid-2">
+            <!-- Petty Cash Box -->
+            <div class="dashboard-card">
+              <h3 class="dash-card-title mb-3">Gastos de Caja Chica</h3>
+              <form id="form-petty-cash" class="mb-4">
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <input type="date" id="caja-date-input" class="form-input" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="number" step="0.5" id="caja-amount-input" class="form-input" placeholder="Monto S/" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="caja-desc-input" class="form-input" placeholder="Descripción (ej. Movilidad, agua, propina...)" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="caja-notes-input" class="form-input" placeholder="Notas adicionales">
+                </div>
+                <button type="submit" class="btn-outline w-full" style="width: 100%; justify-content: center;">
+                  + Registrar Salida de Caja Chica
+                </button>
+              </form>
+
+              <div class="card-table-wrapper">
+                <table class="lusso-table">
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Descripción</th>
+                      <th>Monto</th>
+                      <th>Notas</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="petty-cash-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Invoices Box -->
+            <div class="dashboard-card">
+              <h3 class="dash-card-title mb-3">Facturas & Proveedores</h3>
+              <form id="form-invoice" class="mb-4">
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <input type="date" id="fact-date-input" class="form-input" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="number" step="0.5" id="fact-amount-input" class="form-input" placeholder="Monto S/" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="fact-desc-input" class="form-input" placeholder="Proveedor / Servicio (ej. Alfaparf, Probela, Luz del Sur...)" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="fact-notes-input" class="form-input" placeholder="N° de Factura o detalle">
+                </div>
+                <button type="submit" class="btn-outline w-full" style="width: 100%; justify-content: center;">
+                  + Registrar Factura
+                </button>
+              </form>
+
+              <div class="card-table-wrapper">
+                <table class="lusso-table">
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Proveedor</th>
+                      <th>Monto</th>
+                      <th>Factura / Notas</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="invoices-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- TAB 6: BACKUP & SETTINGS -->
+        <section id="tab-backup" class="crm-tab-content">
+          <div class="crm-header-row">
+            <div>
+              <h1 class="crm-view-title">Respaldo y Seguridad de Datos</h1>
+              <p class="crm-view-desc">Descarga una copia completa de tu base de datos o restaura registros anteriores.</p>
+            </div>
+          </div>
+
+          <div class="dashboard-grid-2">
+            <div class="dashboard-card">
+              <h3 class="dash-card-title mb-2">Exportar Base de Datos</h3>
+              <p class="text-muted text-sm mb-4">Descarga un archivo seguro `.json` con todas las clientas, ventas, inventario y gastos para guardarlo en tu tablet o computadora.</p>
+              <button onclick="window.lussoCRM.handleExportBackup()" class="btn-primary">
+                💾 Descargar Copia de Seguridad Ahora
+              </button>
+            </div>
+
+            <div class="dashboard-card">
+              <h3 class="dash-card-title mb-2">Restaurar Copia de Seguridad</h3>
+              <p class="text-muted text-sm mb-4">Carga un archivo de respaldo `.json` previamente exportado para recuperar todos los datos.</p>
+              <input type="file" id="input-import-backup" accept=".json" class="form-input mb-2">
+            </div>
+          </div>
+
+          <div class="dashboard-card mt-4" style="border-left: 4px solid var(--amber);">
+            <h3 class="dash-card-title text-amber mb-2">Zona de Mantenimiento</h3>
+            <p class="text-muted text-sm mb-3">Si necesitas volver al estado inicial del archivo consolidado 2026 (213 clientas y 492 transacciones originales), puedes restablecer el sistema.</p>
+            <button id="btn-reset-data" class="btn-outline text-red">
+              ⚠️ Restaurar Datos de Fábrica 2026
+            </button>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+
+  <!-- ================= CLIENT 360° DRAWER ================= -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <aside id="client-drawer" class="client-drawer">
+    <div class="drawer-header">
+      <div>
+        <h2 id="drawer-client-name" class="drawer-client-name">Nombre de Clienta</h2>
+        <div id="drawer-client-phone" class="text-sm text-muted">📱 -</div>
+        <div id="drawer-client-tag" class="mt-1"></div>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <a id="drawer-client-wa-btn" href="#" target="_blank" class="btn-icon text-emerald" title="Enviar WhatsApp">💬</a>
+        <button id="btn-close-client-drawer" class="btn-icon" title="Cerrar">✕</button>
+      </div>
+    </div>
+
+    <div class="drawer-content">
+      <!-- 4 Stats Ribbon -->
+      <div class="drawer-stats-grid">
+        <div class="drawer-stat-item">
+          <div class="drawer-stat-title">Total Gastado</div>
+          <div id="drawer-stat-spent" class="drawer-stat-val text-primary">S/ 0.00</div>
+        </div>
+        <div class="drawer-stat-item">
+          <div class="drawer-stat-title">Visitas</div>
+          <div id="drawer-stat-visits" class="drawer-stat-val">0</div>
+        </div>
+        <div class="drawer-stat-item">
+          <div class="drawer-stat-title">Ticket Prom.</div>
+          <div id="drawer-stat-avg" class="drawer-stat-val">S/ 0.00</div>
+        </div>
+        <div class="drawer-stat-item">
+          <div class="drawer-stat-title">Última Cita</div>
+          <div id="drawer-stat-last" class="drawer-stat-val text-xs">-</div>
+        </div>
+      </div>
+
+      <!-- Technical Notes & Formulas -->
+      <div class="form-group mb-4">
+        <div class="drawer-section-title">
+          <span>📝 Ficha Técnica & Fórmulas</span>
+        </div>
+        <textarea id="drawer-tech-notes" class="form-textarea" rows="3" placeholder="Fórmulas de tinte (ej. 7.1 + 8.13), tipo de uña, alergias o preferencias de la clienta..."></textarea>
+        <button onclick="window.lussoCRM.saveTechnicalNotesFromDrawer()" class="btn-sm btn-outline mt-2">
+          Guardar Notas Técnicas
+        </button>
+      </div>
+
+      <!-- Chronological Timeline of Services -->
+      <div class="drawer-section-title">
+        <span>📜 Historial Completo de Servicios & Cobros</span>
+      </div>
+      <div id="drawer-history-timeline">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </aside>
+
+
+  <!-- ================= MODAL: BOOKING WHATSAPP GENERATOR ================= -->
+  <div id="modal-booking" class="lusso-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Agendar Cita en LUSSO</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <form id="booking-modal-form">
+        <div class="modal-body">
+          <p class="text-sm text-muted mb-4">
+            Selecciona el servicio y fecha deseada. Al confirmar, se abrirá tu WhatsApp con el mensaje listo para enviar.
+          </p>
+
+          <div class="form-group">
+            <label class="form-label">Tu Nombre</label>
+            <input type="text" id="booking-name" class="form-input" placeholder="Ej. Ana García" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Servicio Deseado</label>
+            <select id="booking-service-select" class="form-select" required></select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Especialista Preferida</label>
+            <select id="booking-specialist-select" class="form-select">
+              <option value="Cielo">Cielo (Manicurista & Esteticista)</option>
+              <option value="Kiara">Kiara (Estilista & Colorista)</option>
+              <option value="Cualquiera disponible">Cualquiera disponible</option>
+            </select>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Fecha Preferida</label>
+              <input type="date" id="booking-date" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Hora Preferida</label>
+              <select id="booking-time" class="form-select" required>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="06:30 PM">06:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Vista Previa del Mensaje</label>
+            <div id="wa-preview-text" class="timeline-notes" style="font-size: 0.85rem; font-style: italic;">
+              [Vista previa del mensaje...]
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
+          <button type="submit" class="btn-primary">
+            💬 Continuar a WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ================= MODAL: CLIENT NEW / EDIT ================= -->
+  <div id="modal-client" class="lusso-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-client-title" class="modal-title">Registrar Nueva Clienta</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <form id="form-new-client">
+        <input type="hidden" id="client-id-input">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Nombre y Apellido</label>
+            <input type="text" id="client-name-input" class="form-input" required placeholder="Ej. Camila Navarro">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Número de Celular</label>
+            <input type="text" id="client-phone-input" class="form-input" placeholder="Ej. 993511745">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Correo Electrónico (Opcional)</label>
+            <input type="email" id="client-email-input" class="form-input" placeholder="ejemplo@correo.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Fórmulas Técnicas / Notas</label>
+            <textarea id="client-notes-input" class="form-textarea" rows="2" placeholder="Tono de tinte, tipo de uña, observaciones..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
+          <button type="submit" class="btn-primary">Guardar Clienta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ================= MODAL: NEW INVENTORY ITEM ================= -->
+  <div id="modal-inventory" class="lusso-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Registrar Nuevo Insumo</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <form id="form-new-inventory">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Nombre del Insumo / Producto</label>
+            <input type="text" id="inv-name-input" class="form-input" required placeholder="Ej. Tinte Alfaparf 7.1 Rubio Cenizo">
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Categoría</label>
+              <select id="inv-category-select" class="form-select">
+                <option value="Capilar">Capilar</option>
+                <option value="Uñas">Uñas</option>
+                <option value="Descartables">Descartables</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="General">General</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Marca</label>
+              <input type="text" id="inv-brand-input" class="form-input" placeholder="Ej. Alfaparf, OPI...">
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Stock Inicial</label>
+              <input type="number" id="inv-stock-input" class="form-input" value="5" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Stock Mínimo (Alerta)</label>
+              <input type="number" id="inv-minstock-input" class="form-input" value="2" required>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Unidad de Medida</label>
+              <input type="text" id="inv-unit-input" class="form-input" value="Unidades" placeholder="Tubos, Frascos, Litros...">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Costo Unitario (S/)</label>
+              <input type="number" step="0.5" id="inv-cost-input" class="form-input" value="0.00">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Proveedor</label>
+            <input type="text" id="inv-supplier-input" class="form-input" placeholder="Ej. Probela, Alfaparf...">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
+          <button type="submit" class="btn-primary">Guardar Insumo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ================= MODAL: ADJUST STOCK ================= -->
+  <div id="modal-adjust-stock" class="lusso-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Ajustar Stock de Insumo</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <form id="form-adjust-stock">
+        <input type="hidden" id="adjust-inv-id">
+        <div class="modal-body">
+          <p class="mb-3">
+            Insumo: <strong id="adjust-inv-name" class="text-burgundy"></strong><br>
+            Stock actual: <strong id="adjust-current-stock" class="text-primary"></strong>
+          </p>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Tipo de Movimiento</label>
+              <select id="adjust-action-select" class="form-select">
+                <option value="add">➕ Entrada / Compra (+)</option>
+                <option value="subtract">➖ Salida / Consumo (-)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Cantidad</label>
+              <input type="number" step="1" id="adjust-qty-input" class="form-input" placeholder="1" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Motivo o N° de Factura</label>
+            <input type="text" id="adjust-reason-input" class="form-input" placeholder="Ej. Factura 1510 Probela, Merma, Uso en servicio...">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
+          <button type="submit" class="btn-primary">Aplicar Ajuste</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts with strict relative paths -->
+  <script src="./js/data.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/crm.js"></script>
+  <script src="./js/landing.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
