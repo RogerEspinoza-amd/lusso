@@ -1,0 +1,13 @@
+{
+  "name": "lusso-salon-boutique",
+  "version": "1.0.0",
+  "description": "LUSSO Salón Boutique - CRM & Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'Static build ready'"
+  },
+  "keywords": ["salon", "crm", "beauty", "landing-page"],
+  "author": "LUSSO",
+  "license": "MIT"
+}
