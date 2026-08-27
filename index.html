@@ -44,8 +44,8 @@
     <nav class="landing-header">
       <div class="landing-nav">
         <div class="nav-brand">
-          <span class="nav-brand-title">LUSSO</span>
-          <span class="nav-brand-sub">Beauty Salón</span>
+          <span class="nav-brand-title">Lusso Beauty Salón</span>
+          <span class="nav-brand-sub">Miraflores • Lima</span>
         </div>
         <div class="landing-nav-links">
           <a href="#hero" class="nav-link">Inicio</a>
@@ -303,12 +303,12 @@
         </div>
 
         <div class="location-map-card">
-          <h3 class="map-card-title">En el corazón de Miraflores</h3>
+          <h3 class="map-card-title">Encuéntranos en Google Maps: Lusso Studio</h3>
           <p class="map-card-desc">
-            Calle Berlín 481 (a pocas cuadras del Parque Kennedy). Un ambiente íntimo, seguro y acogedor donde Kiara y Cielo te atenderán con toda la dedicación.
+            En Google Maps estamos registradas como <strong>Lusso Studio</strong> en Calle Berlín 481, Miraflores (a pocas cuadras del Parque Kennedy). Un espacio exclusivo y acogedor donde Kiara y Cielo te atenderán con toda la dedicación.
           </p>
-          <a href="https://maps.google.com/?q=Calle+Berlin+481+Miraflores+Lima" target="_blank" class="btn-open-maps">
-            <span>Abrir en Google Maps</span> 🗺️
+          <a href="https://www.google.com/maps/search/?api=1&query=Lusso+Studio+Calle+Berlin+481+Miraflores+Lima" target="_blank" class="btn-open-maps" title="Abrir ubicación de Lusso Studio en Google Maps">
+            <span>Ver Lusso Studio en Google Maps</span> 🗺️
           </a>
         </div>
       </div>
@@ -348,7 +348,7 @@
             <span>➕</span>
           </div>
           <div class="faq-answer">
-            Al ser un salón boutique con atención personalizada 1 a 1, recomendamos agendar tu cita vía WhatsApp al <strong>+51 971 988 386</strong> con al menos 24 horas de anticipación para asegurar el horario de tu preferencia con Kiara o Cielo.
+            En <strong>Lusso Beauty Salón</strong> brindamos atención personalizada y dedicada 1 a 1, por lo que recomendamos agendar tu cita vía WhatsApp al <strong>+51 971 988 386</strong> con al menos 24 horas de anticipación para asegurar el horario de tu preferencia con Kiara o Cielo.
           </div>
         </div>
 
@@ -385,27 +385,16 @@
           <h4>Contacto & Sistema</h4>
           <ul class="footer-links">
             <li><a href="https://wa.me/51971988386" target="_blank">WhatsApp: +51 971 988 386</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Lusso+Studio+Calle+Berlin+481+Miraflores+Lima" target="_blank">Google Maps: Lusso Studio</a></li>
             <li><a href="#" id="btn-enter-crm-from-landing">Acceso Sistema CRM</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Lusso Beauty Salón. Todos los derechos reservados.</span>
-        <span>Calle Berlín 481, Miraflores — Lima, Perú</span>
+        <span>Calle Berlín 481, Miraflores — Lima, Perú (Lusso Studio)</span>
       </div>
     </footer>
-
-    <!-- Floating WhatsApp CTA with prominent floating phrase -->
-    <div class="floating-whatsapp-wrapper">
-      <div class="wa-floating-phrase" onclick="window.lussoLanding.openBookingModal()" title="Hacer clic para agendar tu cita">
-        <span class="wa-phrase-dot"></span>
-        <span class="wa-phrase-text">💬 ¡Agenda tu cita aquí! ✨</span>
-      </div>
-      <a href="javascript:void(0)" onclick="window.lussoLanding.openBookingModal()" class="floating-whatsapp" title="Agendar cita por WhatsApp (+51 971 988 386)">
-        <span class="wa-pulse-ring"></span>
-        <span class="wa-icon-symbol">💬</span>
-      </a>
-    </div>
   </div>
 
 
@@ -1194,7 +1183,7 @@
 
         <div class="success-action-buttons">
           <a id="btn-success-open-whatsapp" href="#" target="_blank" class="btn-primary w-full mb-2">
-            <span>💬 Abrir WhatsApp con Lusso Salón (+51 971 988 386)</span>
+            <span>💬 Abrir WhatsApp con Lusso Beauty Salón (+51 971 988 386)</span>
           </a>
           <a id="btn-success-google-cal" href="#" target="_blank" class="btn-outline w-full mb-2">
             <span>📅 Guardar en mi Google Calendar</span>
@@ -1437,6 +1426,18 @@
         </div>
       </form>
     </div>
+  </div>
+
+  <!-- ================= GLOBAL FLOATING WHATSAPP BUTTON ================= -->
+  <div class="floating-whatsapp-wrapper" id="global-floating-wa">
+    <div class="wa-floating-phrase" onclick="window.lussoLanding ? window.lussoLanding.openBookingModal() : window.open('https://wa.me/51971988386?text=Hola%20Lusso%20Beauty%20Sal%C3%B3n!%20Quisiera%20reservar%20mi%20cita%20%E2%9C%A8', '_blank')" title="Haz clic para reservar tu cita">
+      <span class="wa-phrase-dot"></span>
+      <span class="wa-phrase-text">Reserva tu cita con nosotros en WhatsApp ✨</span>
+    </div>
+    <a href="https://wa.me/51971988386?text=Hola%20Lusso%20Beauty%20Sal%C3%B3n!%20Quisiera%20reservar%20mi%20cita%20%E2%9C%A8" target="_blank" class="floating-whatsapp" title="WhatsApp Oficial Lusso Beauty Salón (+51 971 988 386)">
+      <span class="wa-pulse-ring"></span>
+      <span class="wa-icon-symbol">💬</span>
+    </a>
   </div>
 
   <!-- Toast Notification Container -->
