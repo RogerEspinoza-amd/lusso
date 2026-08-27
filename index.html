@@ -26,6 +26,15 @@
       </button>
     </div>
 
+    <!-- Role Switcher (Stylist Mode vs Owner Mode) -->
+    <div class="top-role-wrapper">
+      <button id="btn-top-role-toggle" class="role-switcher-btn role-stylist" onclick="window.lussoCRM.handleRoleClick()" title="Cambiar entre Modo Estilistas y Modo Dueña con PIN">
+        <span id="top-role-icon">💅</span>
+        <span id="top-role-label">Modo Estilista</span>
+        <span id="top-role-action-badge" class="role-action-tag">🔒 Desbloquear Dueña</span>
+      </button>
+    </div>
+
     <!-- Notification pill for girls (Kiara & Cielo) -->
     <div id="top-pending-badge" class="top-notif-pill hidden" onclick="window.lussoApp.setView('crm'); window.lussoCRM.switchTab('appointments');" title="Ver citas pendientes de confirmación">
       <span class="notif-bell">🔔</span>
@@ -434,6 +443,10 @@
             <li class="crm-nav-item" data-tab="expenses">
               <span class="crm-nav-icon">💰</span>
               <span>Gastos & Facturas</span>
+            </li>
+            <li class="crm-nav-item" data-tab="payroll">
+              <span class="crm-nav-icon">👥</span>
+              <span>Asistencia & Pagos</span>
             </li>
             <li class="crm-nav-item" data-tab="backup">
               <span class="crm-nav-icon">⚙️</span>
@@ -963,6 +976,78 @@
         </section>
 
 
+        <!-- TAB: ASISTENCIA Y NÓMINA DE PAGOS A FIN DE MES -->
+        <section id="tab-payroll" class="crm-tab-content">
+          <div class="crm-view-header">
+            <div>
+              <h1 class="crm-view-title">👥 Asistencia, Faltas y Liquidación de Pagos</h1>
+              <p class="crm-view-desc">Registro de inasistencias, días feriados compensatorios, propinas en tarjeta íntegras y cálculo automático para el pago de fin de mes (Base legal 30 días).</p>
+            </div>
+            <div class="header-action-btns">
+              <button class="btn-outline" onclick="window.lussoCRM.openStaffSalaryModal()">
+                <span>⚙️ Configurar Sueldos Base</span>
+              </button>
+              <button class="btn-primary" onclick="window.lussoCRM.openNewAbsenceModal()">
+                <span>+ Registrar Falta / Novedad</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Controls: Month & Specialist Filters -->
+          <div class="payroll-controls-bar mb-4">
+            <div class="payroll-filter-item">
+              <label class="form-label text-xs">Mes de Liquidación</label>
+              <input type="month" id="payroll-month-selector" class="form-input" value="2026-08">
+            </div>
+            <div class="payroll-filter-item">
+              <label class="form-label text-xs">Filtrar Colaboradora</label>
+              <select id="payroll-specialist-filter" class="form-select">
+                <option value="all">Ver Todas (Kiara & Cielo)</option>
+                <option value="Kiara">💇‍♀️ Kiara (Estilista)</option>
+                <option value="Cielo">💅 Cielo (Nail Artist)</option>
+              </select>
+            </div>
+            <div class="payroll-legal-tag">
+              <span>🇵🇪 Base Legal: <strong>30 días</strong> (Tarifa/día = Sueldo / 30)</span>
+            </div>
+          </div>
+
+          <!-- Cards Grid: Liquidación de Fin de Mes por Trabajadora -->
+          <div id="payroll-cards-container" class="payroll-cards-grid mb-4">
+            <!-- Rendered dynamically by crm.js -->
+          </div>
+
+          <!-- Table: Detalle de Faltas, Feriados y Propinas del Mes -->
+          <div class="dashboard-card">
+            <div class="dash-card-header">
+              <div>
+                <h3 class="dash-card-title">📋 Registro Detallado de Novedades del Mes</h3>
+                <p class="text-xs text-muted">Historial de inasistencias justificadas/injustificadas, días feriados acordados y propinas en tarjeta.</p>
+              </div>
+              <span id="payroll-records-badge" class="badge-tag">0 registros</span>
+            </div>
+            <div class="table-responsive">
+              <table class="lusso-table">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Colaboradora</th>
+                    <th>Tipo de Registro</th>
+                    <th>Motivo / Justificación</th>
+                    <th>Monto / Impacto</th>
+                    <th>Observaciones</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="payroll-table-body">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+
         <!-- TAB 6: BACKUP & SETTINGS -->
         <section id="tab-backup" class="crm-tab-content">
           <div class="crm-header-row">
@@ -1420,9 +1505,132 @@
             <input type="text" id="adjust-reason-input" class="form-input" placeholder="Ej. Factura 1510 Probela, Merma, Uso en servicio...">
           </div>
         </div>
+  <!-- ================= MODAL: REGISTER ABSENCE / FERIADO / PROPINAS ================= -->
+  <div id="modal-absence-register" class="lusso-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-absence-title" class="modal-title">Registrar Novedad de Asistencia o Pago</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <form id="form-absence-register">
+        <input type="hidden" id="absence-id-input">
+        <div class="modal-body">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Colaboradora *</label>
+              <select id="absence-specialist-select" class="form-select" required>
+                <option value="Kiara">💇‍♀️ Kiara (Estilista Master)</option>
+                <option value="Cielo">💅 Cielo (Nail Artist & Esteticista)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Fecha del Evento *</label>
+              <input type="date" id="absence-date-input" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Tipo de Novedad / Evento *</label>
+            <select id="absence-type-select" class="form-select" required onchange="window.lussoCRM.handleAbsenceTypeChange(this.value)">
+              <option value="falta_completa">❌ Inasistencia / Falta Día Completo (Descuenta 1 día legal: Sueldo / 30)</option>
+              <option value="medio_dia">⏳ Permiso Medio Día (Descuenta 0.5 día legal: Sueldo / 60)</option>
+              <option value="tardanza">⏰ Tardanza / Penalidad (Monto fijo a descontar)</option>
+              <option value="permiso_con_goce">✅ Permiso Justificado con Goce (Sin descuento S/ 0)</option>
+              <option value="feriado_trabajado">🎉 Día Feriado Trabajado Acordado (+1 día a favor)</option>
+              <option value="propina_tarjeta">💳 Propinas de Clientas en Tarjeta/POS (+100% íntegro)</option>
+              <option value="bono">⭐ Bono Adicional por Desempeño / Ventas (+)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Motivo o Justificación *</label>
+            <input type="text" id="absence-reason-input" class="form-input" placeholder="Ej. Trámite personal, Feriado 15 Agosto trabajado, Propinas semana 3..." required>
+          </div>
+
+          <div id="absence-custom-amount-group" class="form-group hidden">
+            <label id="absence-amount-label" class="form-label">Monto Personalizado (S/)</label>
+            <input type="number" step="0.5" id="absence-amount-input" class="form-input" placeholder="0.00">
+            <p id="absence-amount-hint" class="text-xs text-muted mt-1">El monto se calculará automáticamente si lo dejas vacío según el sueldo base.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Notas Adicionales (Opcional)</label>
+            <textarea id="absence-notes-input" class="form-textarea" rows="2" placeholder="Detalles del acuerdo interno, comprobante o notas..."></textarea>
+          </div>
+        </div>
+
         <div class="modal-footer">
           <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
-          <button type="submit" class="btn-primary">Aplicar Ajuste</button>
+          <button type="submit" class="btn-primary">Guardar Registro</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ================= MODAL: STAFF SALARY CONFIG ================= -->
+  <div id="modal-staff-salary" class="lusso-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">⚙️ Configuración de Sueldos Base y Nómina</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <form id="form-staff-salary">
+        <div class="modal-body">
+          <p class="text-sm text-muted mb-3">
+            Ajusta los sueldos base mensuales de Kiara y Cielo. Los cálculos de faltas y feriados se realizan sobre una base legal de <strong>30 días</strong> por mes.
+          </p>
+
+          <div class="form-row-2 mb-3">
+            <div class="form-group">
+              <label class="form-label">💇‍♀️ Sueldo Base Mensual - Kiara (S/)</label>
+              <input type="number" step="10" id="salary-kiara-input" class="form-input" value="1600" required>
+              <span class="text-xs text-muted">Tarifa diaria: ~S/ <span id="kiara-daily-calc">53.33</span>/día</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label">💅 Sueldo Base Mensual - Cielo (S/)</label>
+              <input type="number" step="10" id="salary-cielo-input" class="form-input" value="1400" required>
+              <span class="text-xs text-muted">Tarifa diaria: ~S/ <span id="cielo-daily-calc">46.67</span>/día</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Base de Días para Cálculo Laboral</label>
+            <input type="number" id="salary-days-base-input" class="form-input" value="30" readonly style="background: #f8fafc;">
+            <p class="text-xs text-muted mt-1">🇵🇪 Establecido en 30 días según la normativa contable y laboral peruana.</p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
+          <button type="submit" class="btn-primary">Guardar Configuración</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: ADMIN PIN UNLOCK ================= -->
+  <div id="modal-admin-pin" class="lusso-modal">
+    <div class="modal-card modal-pin-card">
+      <div class="modal-header">
+        <h3 class="modal-title">🔒 Desbloquear Modo Dueña / Administración</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <form id="form-admin-pin">
+        <div class="modal-body text-center py-4">
+          <div class="pin-shield-icon">🔐</div>
+          <p class="text-sm text-muted mb-3">
+            Ingresa el PIN de seguridad de 4 dígitos para acceder a los reportes de ingresos, balance financiero de Lusso y módulos administrativos.
+          </p>
+          <div class="pin-input-container">
+            <input type="password" id="input-admin-pin" class="form-input pin-field" maxlength="6" inputmode="numeric" placeholder="••••" autocomplete="off" required>
+          </div>
+          <p class="text-xs text-muted mt-2">PIN por defecto: <strong>2026</strong></p>
+          <div id="pin-error-msg" class="text-xs text-red mt-2 hidden font-bold">⚠️ PIN incorrecto. Inténtalo de nuevo.</div>
+        </div>
+        <div class="modal-footer justify-center">
+          <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
+          <button type="submit" class="btn-primary">Desbloquear Acceso 🔓</button>
         </div>
       </form>
     </div>
