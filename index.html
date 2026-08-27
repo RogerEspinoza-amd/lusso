@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>LUSSO Salón Boutique | Miraflores — CRM & Landing Page</title>
+  <title>Lusso Beauty Salón | Miraflores — Citas, Ofertas & CRM</title>
   <link rel="stylesheet" href="./css/styles.css">
   <!-- Favicon / Brand Icon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💅</text></svg>">
@@ -13,8 +13,8 @@
   <!-- ================= TOP SYSTEM SWITCHER BAR ================= -->
   <header class="top-system-bar">
     <div class="system-brand">
-      <span>✨ LUSSO</span>
-      <span class="system-badge">Boutique Miraflores</span>
+      <span>✨ Lusso Beauty Salón</span>
+      <span class="system-badge">Miraflores</span>
     </div>
     
     <div class="view-switcher-group">
@@ -24,6 +24,12 @@
       <button id="btn-switch-crm" class="switcher-btn" title="Ver panel administrativo y base de datos">
         💼 Sistema CRM
       </button>
+    </div>
+
+    <!-- Notification pill for girls (Kiara & Cielo) -->
+    <div id="top-pending-badge" class="top-notif-pill hidden" onclick="window.lussoApp.setView('crm'); window.lussoCRM.switchTab('appointments');" title="Ver citas pendientes de confirmación">
+      <span class="notif-bell">🔔</span>
+      <span id="top-pending-count">0</span> citas nuevas
     </div>
 
     <div class="system-location-tag">
@@ -39,10 +45,11 @@
       <div class="landing-nav">
         <div class="nav-brand">
           <span class="nav-brand-title">LUSSO</span>
-          <span class="nav-brand-sub">Salón Boutique</span>
+          <span class="nav-brand-sub">Beauty Salón</span>
         </div>
         <div class="landing-nav-links">
           <a href="#hero" class="nav-link">Inicio</a>
+          <a href="#ofertas" class="nav-link nav-link-highlight">⭐ Ofertas del Mes</a>
           <a href="#catalogo" class="nav-link">Servicios & Precios</a>
           <a href="#equipo" class="nav-link">Nuestro Equipo</a>
           <a href="#ubicacion" class="nav-link">Ubicación</a>
@@ -60,20 +67,20 @@
       <div class="hero-container">
         <div class="hero-text-content">
           <div class="hero-pill-badge">
-            <span>✨ Experiencia Boutique en Miraflores</span>
+            <span>✨ Experiencia Beauty en Miraflores</span>
           </div>
           <h1 class="hero-title">
-            Tu espacio íntimo de <em>cuidado y elegancia</em>
+            Tu espacio de <em>belleza, cuidado y elegancia</em>
           </h1>
           <p class="hero-desc">
-            Atención personalizada de una estilista y una manicurista dedicadas. Especialistas en Manicure Gel UV, tratamientos capilares con aceite de argán, colorimetría y diseño de cejas con precios claros.
+            Atención personalizada y cercana de <strong>Kiara (Estilista)</strong> y <strong>Cielo (Nail Artist)</strong> en Lusso Beauty Salón. Especialistas en Manicure Gel UV, tratamientos capilares con aceite de argán, mechas balayage y diseño de cejas con tarifas transparentes.
           </p>
           <div class="hero-actions">
             <button class="btn-primary-hero" onclick="window.lussoLanding.openBookingModal()">
               <span>Agendar Cita por WhatsApp</span> 💬
             </button>
-            <a href="#catalogo" class="btn-secondary-hero">
-              Ver Catálogo de Precios
+            <a href="#ofertas" class="btn-secondary-hero">
+              ⭐ Ver Ofertas del Mes
             </a>
           </div>
           <div class="hero-features-list">
@@ -102,7 +109,7 @@
                   <div class="hero-s-title">Alisado Orgánico Marroquí</div>
                   <div class="hero-s-spec">Atiende: Kiara (Estilista)</div>
                 </div>
-                <div class="hero-s-price">Desde S/ 200</div>
+                <div class="hero-s-price">Desde S/ 189</div>
               </div>
               <div class="hero-service-row">
                 <div>
@@ -132,8 +139,8 @@
         </div>
         <div class="sig-card">
           <div class="sig-icon">☕</div>
-          <h4 class="sig-title">Experiencia Boutique 1 a 1</h4>
-          <p class="sig-desc">Ambiente tranquilo y sin prisas. Café de cortesía, bebidas refrescantes y atención dedicada exclusivamente a ti.</p>
+          <h4 class="sig-title">Experiencia Beauty 1 a 1</h4>
+          <p class="sig-desc">Ambiente íntimo, relajante y sin prisas. Café de cortesía, bebidas refrescantes y atención dedicada exclusivamente a ti.</p>
         </div>
         <div class="sig-card">
           <div class="sig-icon">🏷️</div>
@@ -143,12 +150,44 @@
       </div>
     </section>
 
+    <!-- ================= NUEVA SECCIÓN: OFERTAS ESPECIALES DEL MES ================= -->
+    <section id="ofertas" class="offers-section">
+      <div class="offers-container">
+        <div class="section-header-centered">
+          <div class="offers-pill-header">
+            <span>🔥 PROMOCIONES EXCLUSIVAS</span>
+          </div>
+          <h2 class="section-title">Ofertas Especiales del Mes</h2>
+          <p class="section-desc">
+            Aprovecha nuestros paquetes y rituales combinados a un precio preferencial. ¡Agenda tu cita antes de que se agoten los cupos disponibles!
+          </p>
+        </div>
+
+        <div id="offers-grid" class="offers-grid">
+          <!-- Rendered dynamically by js/landing.js from window.lussoDB.getMonthlyOffers() -->
+        </div>
+
+        <div class="offers-bottom-banner">
+          <div class="banner-content">
+            <span class="banner-icon">💖</span>
+            <div>
+              <h4 class="banner-title">¿Deseas personalizar tu paquete o consultar una combinación?</h4>
+              <p class="banner-desc">Escríbenos directamente por WhatsApp y te asesoramos al instante según tu tipo de cabello o uñas.</p>
+            </div>
+          </div>
+          <button class="btn-primary banner-btn" onclick="window.lussoLanding.openBookingModal()">
+            <span>Consultar por WhatsApp</span> 💬
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- Interactive Services Catalog -->
     <section id="catalogo" class="catalog-section">
       <div class="section-header-centered">
         <span class="section-subtitle">Carta de Servicios</span>
         <h2 class="section-title">Encuentra tu ritual ideal</h2>
-        <p class="section-desc">Selecciona una categoría o busca el servicio que deseas realizarte en nuestro salón boutique.</p>
+        <p class="section-desc">Selecciona una categoría o busca el servicio que deseas realizarte en Lusso Beauty Salón.</p>
       </div>
 
       <div class="catalog-controls">
@@ -257,8 +296,8 @@
           <div class="loc-item">
             <div class="loc-icon">💬</div>
             <div>
-              <div class="loc-title">Reservas Directas</div>
-              <div class="loc-detail">WhatsApp: +51 993 511 745</div>
+              <div class="loc-title">Reservas Directas & WhatsApp</div>
+              <div class="loc-detail">WhatsApp: <strong>+51 971 988 386</strong></div>
             </div>
           </div>
         </div>
@@ -266,7 +305,7 @@
         <div class="location-map-card">
           <h3 class="map-card-title">En el corazón de Miraflores</h3>
           <p class="map-card-desc">
-            A pocas cuadras del Parque Kennedy. Un ambiente tranquilo, seguro y de fácil acceso para consentirte.
+            Calle Berlín 481 (a pocas cuadras del Parque Kennedy). Un ambiente íntimo, seguro y acogedor donde Kiara y Cielo te atenderán con toda la dedicación.
           </p>
           <a href="https://maps.google.com/?q=Calle+Berlin+481+Miraflores+Lima" target="_blank" class="btn-open-maps">
             <span>Abrir en Google Maps</span> 🗺️
@@ -309,7 +348,7 @@
             <span>➕</span>
           </div>
           <div class="faq-answer">
-            Al ser un salón boutique con atención personalizada 1 a 1, recomendamos agendar tu cita vía WhatsApp con al menos 24 horas de anticipación para asegurarte el horario de tu preferencia con Kiara o Cielo.
+            Al ser un salón boutique con atención personalizada 1 a 1, recomendamos agendar tu cita vía WhatsApp al <strong>+51 971 988 386</strong> con al menos 24 horas de anticipación para asegurar el horario de tu preferencia con Kiara o Cielo.
           </div>
         </div>
 
@@ -329,12 +368,13 @@
     <footer class="landing-footer">
       <div class="footer-container">
         <div class="footer-brand">
-          <h3>LUSSO Salón Boutique</h3>
-          <p>Experiencia boutique en el corazón de Miraflores. Belleza personalizada, calidad superior y cuidado dedicado para ti.</p>
+          <h3>Lusso Beauty Salón</h3>
+          <p>Experiencia de belleza personalizada en el corazón de Miraflores. Calidad superior, productos de alta gama y atención dedicada de Kiara y Cielo.</p>
         </div>
         <div class="footer-col">
           <h4>Navegación</h4>
           <ul class="footer-links">
+            <li><a href="#ofertas">Ofertas del Mes</a></li>
             <li><a href="#catalogo">Catálogo de Servicios</a></li>
             <li><a href="#equipo">Conoce al Equipo</a></li>
             <li><a href="#ubicacion">Cómo Llegar</a></li>
@@ -342,23 +382,30 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Administración</h4>
+          <h4>Contacto & Sistema</h4>
           <ul class="footer-links">
+            <li><a href="https://wa.me/51971988386" target="_blank">WhatsApp: +51 971 988 386</a></li>
             <li><a href="#" id="btn-enter-crm-from-landing">Acceso Sistema CRM</a></li>
-            <li><a href="https://wa.me/51993511745" target="_blank">WhatsApp del Salón</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 LUSSO Salón Boutique. Todos los derechos reservados.</span>
-        <span>Miraflores, Lima — Perú</span>
+        <span>© 2026 Lusso Beauty Salón. Todos los derechos reservados.</span>
+        <span>Calle Berlín 481, Miraflores — Lima, Perú</span>
       </div>
     </footer>
 
-    <!-- Floating WhatsApp CTA -->
-    <a href="javascript:void(0)" onclick="window.lussoLanding.openBookingModal()" class="floating-whatsapp" title="Agendar cita por WhatsApp">
-      💬
-    </a>
+    <!-- Floating WhatsApp CTA with prominent floating phrase -->
+    <div class="floating-whatsapp-wrapper">
+      <div class="wa-floating-phrase" onclick="window.lussoLanding.openBookingModal()" title="Hacer clic para agendar tu cita">
+        <span class="wa-phrase-dot"></span>
+        <span class="wa-phrase-text">💬 ¡Agenda tu cita aquí! ✨</span>
+      </div>
+      <a href="javascript:void(0)" onclick="window.lussoLanding.openBookingModal()" class="floating-whatsapp" title="Agendar cita por WhatsApp (+51 971 988 386)">
+        <span class="wa-pulse-ring"></span>
+        <span class="wa-icon-symbol">💬</span>
+      </a>
+    </div>
   </div>
 
 
@@ -370,13 +417,18 @@
       <aside class="crm-sidebar">
         <div>
           <div class="crm-sidebar-header">
-            <h2 class="crm-salon-title">LUSSO Hub</h2>
-            <span class="crm-salon-subtitle">Gestión & CRM Boutique</span>
+            <h2 class="crm-salon-title">Lusso Beauty Salón</h2>
+            <span class="crm-salon-subtitle">Gestión, Citas & POS</span>
           </div>
           <ul class="crm-nav-list">
             <li class="crm-nav-item active" data-tab="dashboard">
               <span class="crm-nav-icon">📊</span>
               <span>Dashboard & Métricas</span>
+            </li>
+            <li class="crm-nav-item" data-tab="appointments">
+              <span class="crm-nav-icon">📅</span>
+              <span>Agenda & Citas</span>
+              <span id="crm-sidebar-pending-badge" class="badge-sidebar-notif hidden">0</span>
             </li>
             <li class="crm-nav-item" data-tab="clients">
               <span class="crm-nav-icon">👥</span>
@@ -416,11 +468,16 @@
           <div class="crm-header-row">
             <div>
               <h1 class="crm-view-title">Dashboard Operativo</h1>
-              <p class="crm-view-desc">Resumen integral de ventas, clientas y rendimiento del salón LUSSO.</p>
+              <p class="crm-view-desc">Resumen integral de citas, ventas, clientas y rendimiento de Lusso Beauty Salón.</p>
             </div>
-            <button class="btn-primary" onclick="window.lussoCRM.switchTab('sales')">
-              <span>+ Registrar Servicio / Venta</span>
-            </button>
+            <div class="header-action-btns">
+              <button class="btn-outline" onclick="window.lussoCRM.switchTab('appointments')">
+                <span>📅 Ver Agenda de Citas</span>
+              </button>
+              <button class="btn-primary" onclick="window.lussoCRM.switchTab('sales')">
+                <span>+ Registrar Cobro / POS</span>
+              </button>
+            </div>
           </div>
 
           <!-- KPI Metrics Row -->
@@ -430,25 +487,41 @@
               <div id="kpi-total-revenue" class="kpi-val">S/ 0.00</div>
               <span class="kpi-sub">Ventas acumuladas</span>
             </div>
+            <div class="kpi-card kpi-purple">
+              <span class="kpi-label">Citas de Hoy</span>
+              <div id="kpi-today-appointments" class="kpi-val">0</div>
+              <span class="kpi-sub"><span id="kpi-pending-appointments">0</span> pendientes</span>
+            </div>
             <div class="kpi-card">
               <span class="kpi-label">Servicios Atendidos</span>
               <div id="kpi-total-sales" class="kpi-val">0</div>
               <span class="kpi-sub">Transacciones registradas</span>
             </div>
-            <div class="kpi-card kpi-purple">
+            <div class="kpi-card kpi-emerald">
               <span class="kpi-label">Base de Clientas</span>
               <div id="kpi-total-clients" class="kpi-val">0</div>
               <span class="kpi-sub">Fichas registradas</span>
-            </div>
-            <div class="kpi-card kpi-emerald">
-              <span class="kpi-label">Tasa de Recurrencia</span>
-              <div id="kpi-recurrence-rate" class="kpi-val">0%</div>
-              <span class="kpi-sub">Clientas recurrentes</span>
             </div>
             <div class="kpi-card kpi-amber">
               <span class="kpi-label">Insumos Críticos</span>
               <div id="kpi-low-stock" class="kpi-val">0</div>
               <span class="kpi-sub">Por debajo de stock mín.</span>
+            </div>
+          </div>
+
+          <!-- Today's Appointments Quick Widget -->
+          <div class="dashboard-card mb-4">
+            <div class="dash-card-header">
+              <div>
+                <h3 class="dash-card-title">📅 Citas de Hoy para Kiara y Cielo</h3>
+                <p class="text-xs text-muted">Clientas agendadas para el día de hoy con estado y acceso rápido a WhatsApp y Cobro.</p>
+              </div>
+              <button class="btn-sm btn-outline" onclick="window.lussoCRM.switchTab('appointments')">
+                Ver toda la agenda →
+              </button>
+            </div>
+            <div id="dashboard-today-appointments-list">
+              <!-- Rendered dynamically by js/crm.js -->
             </div>
           </div>
 
@@ -490,7 +563,92 @@
         </section>
 
 
-        <!-- TAB 2: CLIENT DIRECTORY & 360 CRM -->
+        <!-- TAB 2: AGENDA & CITAS (KIARA & CIELO) -->
+        <section id="tab-appointments" class="crm-tab-content">
+          <div class="crm-header-row">
+            <div>
+              <h1 class="crm-view-title">Agenda & Citas de Clientes</h1>
+              <p class="crm-view-desc">Control de citas recibidas desde la Landing y registradas en local. Confirmación rápida por WhatsApp y pase directo a caja.</p>
+            </div>
+            <button class="btn-primary" onclick="window.lussoCRM.openNewAppointmentModal()">
+              <span>+ Nueva Cita Manual</span>
+            </button>
+          </div>
+
+          <!-- Quick Appointments Summary Stats -->
+          <div class="appointment-stats-row mb-4">
+            <div class="apt-stat-pill" onclick="window.lussoCRM.filterAppointmentsByDate('today')">
+              <span class="apt-stat-icon">📅</span>
+              <div>
+                <span class="apt-stat-label">Citas para Hoy</span>
+                <span id="apt-stat-today-count" class="apt-stat-val">0</span>
+              </div>
+            </div>
+            <div class="apt-stat-pill stat-pending" onclick="window.lussoCRM.filterAppointmentsByStatus('pending')">
+              <span class="apt-stat-icon">⏳</span>
+              <div>
+                <span class="apt-stat-label">Pendientes de Confirmar</span>
+                <span id="apt-stat-pending-count" class="apt-stat-val">0</span>
+              </div>
+            </div>
+            <div class="apt-stat-pill stat-confirmed" onclick="window.lussoCRM.filterAppointmentsByStatus('confirmed')">
+              <span class="apt-stat-icon">✅</span>
+              <div>
+                <span class="apt-stat-label">Confirmadas</span>
+                <span id="apt-stat-confirmed-count" class="apt-stat-val">0</span>
+              </div>
+            </div>
+            <div class="apt-stat-pill stat-completed" onclick="window.lussoCRM.filterAppointmentsByStatus('completed')">
+              <span class="apt-stat-icon">💅</span>
+              <div>
+                <span class="apt-stat-label">Atendidas / Cobradas</span>
+                <span id="apt-stat-completed-count" class="apt-stat-val">0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appointments Filter Toolbar -->
+          <div class="card-table-wrapper">
+            <div class="table-toolbar">
+              <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="appointment-search-input" placeholder="Buscar por clienta, celular o servicio...">
+              </div>
+
+              <!-- Specialist Filter -->
+              <div class="filter-btn-group">
+                <button class="filter-pill-btn apt-spec-filter active" data-spec="all">Todas</button>
+                <button class="filter-pill-btn apt-spec-filter" data-spec="Kiara">💇‍♀️ Kiara</button>
+                <button class="filter-pill-btn apt-spec-filter" data-spec="Cielo">💅 Cielo</button>
+              </div>
+
+              <!-- Date Filter -->
+              <div class="filter-btn-group">
+                <button class="filter-pill-btn apt-date-filter active" data-date="all">Todas las fechas</button>
+                <button class="filter-pill-btn apt-date-filter" data-date="today">Hoy</button>
+                <button class="filter-pill-btn apt-date-filter" data-date="tomorrow">Mañana</button>
+                <button class="filter-pill-btn apt-date-filter" data-date="week">Esta Semana</button>
+              </div>
+
+              <!-- Status Filter Select -->
+              <select id="appointment-status-select-filter" class="form-select select-compact">
+                <option value="all">Estado: Todos</option>
+                <option value="pending">⏳ Pendientes</option>
+                <option value="confirmed">✅ Confirmadas</option>
+                <option value="completed">💅 Atendidas</option>
+                <option value="cancelled">❌ Canceladas</option>
+              </select>
+            </div>
+
+            <!-- Appointments List / Cards Container -->
+            <div id="appointments-list-container" class="appointments-cards-grid">
+              <!-- Rendered dynamically by js/crm.js -->
+            </div>
+          </div>
+        </section>
+
+
+        <!-- TAB 3: CLIENT DIRECTORY & 360 CRM -->
         <section id="tab-clients" class="crm-tab-content">
           <div class="crm-header-row">
             <div>
@@ -913,58 +1071,72 @@
   </aside>
 
 
-  <!-- ================= MODAL: BOOKING WHATSAPP GENERATOR ================= -->
+  <!-- ================= MODAL 1: BOOKING WHATSAPP & CRM GENERATOR ================= -->
   <div id="modal-booking" class="lusso-modal">
     <div class="modal-card">
       <div class="modal-header">
-        <h3 class="modal-title">Agendar Cita en LUSSO</h3>
+        <h3 class="modal-title">Agendar Cita en Lusso Beauty Salón</h3>
         <button class="modal-close-btn">✕</button>
       </div>
       <form id="booking-modal-form">
         <div class="modal-body">
-          <p class="text-sm text-muted mb-4">
-            Selecciona el servicio y fecha deseada. Al confirmar, se abrirá tu WhatsApp con el mensaje listo para enviar.
+          <p class="text-sm text-muted mb-3">
+            Selecciona tu servicio o promo del mes. Tu cita quedará <strong>registrada automáticamente en nuestro sistema</strong> y se abrirá WhatsApp con el salón (+51 971 988 386).
           </p>
 
-          <div class="form-group">
-            <label class="form-label">Tu Nombre</label>
-            <input type="text" id="booking-name" class="form-input" placeholder="Ej. Ana García" required>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Tu Nombre y Apellido *</label>
+              <input type="text" id="booking-name" class="form-input" placeholder="Ej. Ana García" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tu Celular (WhatsApp) *</label>
+              <input type="tel" id="booking-phone" class="form-input" placeholder="Ej. 971988386" required>
+            </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label">Servicio Deseado</label>
+            <label class="form-label">Servicio u Oferta del Mes *</label>
             <select id="booking-service-select" class="form-select" required></select>
           </div>
 
           <div class="form-group">
             <label class="form-label">Especialista Preferida</label>
             <select id="booking-specialist-select" class="form-select">
-              <option value="Cielo">Cielo (Manicurista & Esteticista)</option>
-              <option value="Kiara">Kiara (Estilista & Colorista)</option>
-              <option value="Cualquiera disponible">Cualquiera disponible</option>
+              <option value="Cielo">💅 Cielo (Nail Artist & Esteticista)</option>
+              <option value="Kiara">💇‍♀️ Kiara (Estilista & Colorista)</option>
+              <option value="Cualquiera disponible">✨ Cualquiera disponible</option>
             </select>
           </div>
 
           <div class="form-row-2">
             <div class="form-group">
-              <label class="form-label">Fecha Preferida</label>
+              <label class="form-label">Fecha Preferida *</label>
               <input type="date" id="booking-date" class="form-input" required>
             </div>
             <div class="form-group">
-              <label class="form-label">Hora Preferida</label>
+              <label class="form-label">Hora Preferida *</label>
               <select id="booking-time" class="form-select" required>
-                <option value="10:00 AM">10:00 AM</option>
+                <option value="09:30 AM">09:30 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
                 <option value="11:30 AM">11:30 AM</option>
+                <option value="12:30 PM">12:30 PM</option>
                 <option value="02:00 PM">02:00 PM</option>
                 <option value="03:30 PM">03:30 PM</option>
                 <option value="05:00 PM">05:00 PM</option>
                 <option value="06:30 PM">06:30 PM</option>
+                <option value="07:30 PM">07:30 PM</option>
               </select>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label">Vista Previa del Mensaje</label>
+            <label class="form-label">Observaciones o Preguntas (Opcional)</label>
+            <input type="text" id="booking-notes" class="form-input" placeholder="Ej. Tengo retiro previo, cabello hasta los hombros...">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Vista Previa del Mensaje de WhatsApp</label>
             <div id="wa-preview-text" class="timeline-notes" style="font-size: 0.85rem; font-style: italic;">
               [Vista previa del mensaje...]
             </div>
@@ -974,8 +1146,152 @@
         <div class="modal-footer">
           <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
           <button type="submit" class="btn-primary">
-            💬 Continuar a WhatsApp
+            <span>💬 Confirmar Cita & Enviar por WhatsApp</span>
           </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ================= MODAL 2: CONFIRMACIÓN EXITOSA DE CITA ================= -->
+  <div id="modal-booking-success" class="lusso-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title text-emerald">✨ ¡Cita Registrada con Éxito!</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <div class="success-icon-badge mb-3">💖</div>
+        <h3 id="success-client-greeting" class="serif-font mb-2">¡Gracias por reservar con nosotras!</h3>
+        <p class="text-muted text-sm mb-4">
+          Tu solicitud ya está guardada en la agenda del salón y nuestro equipo (Kiara / Cielo) ha recibido la notificación.
+        </p>
+
+        <!-- Summary Ticket Box -->
+        <div class="booking-ticket-box mb-4">
+          <div class="ticket-row">
+            <span class="ticket-label">N° de Cita:</span>
+            <strong id="success-apt-id" class="text-burgundy">-</strong>
+          </div>
+          <div class="ticket-row">
+            <span class="ticket-label">Servicio / Promo:</span>
+            <strong id="success-apt-service">-</strong>
+          </div>
+          <div class="ticket-row">
+            <span class="ticket-label">Especialista:</span>
+            <strong id="success-apt-specialist">-</strong>
+          </div>
+          <div class="ticket-row">
+            <span class="ticket-label">Fecha y Hora:</span>
+            <strong id="success-apt-datetime" class="text-primary">-</strong>
+          </div>
+          <div class="ticket-row">
+            <span class="ticket-label">Lugar:</span>
+            <span>📍 Calle Berlín 481, Miraflores</span>
+          </div>
+        </div>
+
+        <div class="success-action-buttons">
+          <a id="btn-success-open-whatsapp" href="#" target="_blank" class="btn-primary w-full mb-2">
+            <span>💬 Abrir WhatsApp con Lusso Salón (+51 971 988 386)</span>
+          </a>
+          <a id="btn-success-google-cal" href="#" target="_blank" class="btn-outline w-full mb-2">
+            <span>📅 Guardar en mi Google Calendar</span>
+          </a>
+        </div>
+      </div>
+      <div class="modal-footer justify-center">
+        <button type="button" class="btn-sm btn-outline btn-modal-cancel">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= MODAL 3: MANUAL APPOINTMENT (CRM) ================= -->
+  <div id="modal-appointment-manual" class="lusso-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-manual-apt-title" class="modal-title">Registrar Cita Manual (Agenda)</h3>
+        <button class="modal-close-btn">✕</button>
+      </div>
+      <form id="form-manual-appointment">
+        <input type="hidden" id="manual-apt-id">
+        <div class="modal-body">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Nombre de la Clienta *</label>
+              <input type="text" id="manual-apt-name" list="clients-datalist-manual" class="form-input" placeholder="Nombre completo" required>
+              <datalist id="clients-datalist-manual"></datalist>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Celular (WhatsApp)</label>
+              <input type="tel" id="manual-apt-phone" class="form-input" placeholder="Ej. 971988386">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Servicio a Realizar *</label>
+              <input type="text" id="manual-apt-service" list="services-datalist-manual" class="form-input" placeholder="Ej. Manicure Gel UV, Mechas..." required>
+              <datalist id="services-datalist-manual"></datalist>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Especialista Asignada *</label>
+              <select id="manual-apt-specialist" class="form-select" required>
+                <option value="Kiara">Kiara (Estilista)</option>
+                <option value="Cielo">Cielo (Manicurista)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Fecha *</label>
+              <input type="date" id="manual-apt-date" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Hora *</label>
+              <select id="manual-apt-time" class="form-select" required>
+                <option value="09:30 AM">09:30 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="06:30 PM">06:30 PM</option>
+                <option value="07:30 PM">07:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Estado de la Cita</label>
+              <select id="manual-apt-status" class="form-select">
+                <option value="confirmed">✅ Confirmada</option>
+                <option value="pending">⏳ Pendiente de Confirmar</option>
+                <option value="completed">💅 Atendida</option>
+                <option value="cancelled">❌ Cancelada</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Monto Estimado (S/)</label>
+              <input type="number" step="1" id="manual-apt-amount" class="form-input" placeholder="60">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Notas / Observaciones</label>
+            <textarea id="manual-apt-notes" class="form-textarea" rows="2" placeholder="Detalles de la cita, tono de tinte, uña, etc."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-outline btn-modal-cancel">Cancelar</button>
+          <button type="submit" class="btn-primary">Guardar en Agenda</button>
         </div>
       </form>
     </div>
