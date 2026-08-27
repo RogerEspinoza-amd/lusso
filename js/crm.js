@@ -628,22 +628,6 @@ class LussoCRM {
     if (!container) return;
 
     const isAdmin = window.lussoDB.isPrivilegedAdmin();
-    if (!isAdmin) {
-      container.innerHTML = `
-        <div class="lock-metric-card">
-          <div class="lock-icon-box">🔐</div>
-          <div>
-            <h4 class="font-bold text-burgundy text-sm">Métricas de Caja & Pagos Restringidas</h4>
-            <p class="text-xs text-muted mt-1">El desglose monetario por tarjeta, efectivo y transferencias solo está disponible en Modo Dueña.</p>
-          </div>
-          <button class="btn-xs btn-outline mt-2" onclick="window.lussoCRM.handleRoleClick()">
-            🔑 Desbloquear con PIN
-          </button>
-        </div>
-      `;
-      return;
-    }
-
     const total = Object.values(paymentMethods).reduce((a, b) => a + b, 0);
     const colors = {
       'TARJETA': '#d48b96',
@@ -658,20 +642,24 @@ class LussoCRM {
       if (amount <= 0 || method.includes('.')) return;
       const pct = total > 0 ? Math.round((amount / total) * 100) : 0;
       const color = colors[method] || '#94a3b8';
+
       html += `
-        <div class="payment-stat-card">
-          <div class="payment-color-dot" style="background-color: ${color}"></div>
-          <div class="payment-info">
-            <span class="payment-name">${method}</span>
-            <span class="payment-pct">${pct}% del total</span>
+        <div class="payment-method-row">
+          <div class="pay-method-header">
+            <span class="pay-dot" style="background-color: ${color}"></span>
+            <span class="pay-name">${method}</span>
+            <span class="pay-val">${isAdmin ? `S/ ${amount.toLocaleString('es-PE', { minimumFractionDigits: 2 })} (${pct}%)` : `${pct}% de cobros`}</span>
           </div>
-          <div class="payment-amount">S/ ${amount.toLocaleString('es-PE', { minimumFractionDigits: 0 })}</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: ${pct}%; background-color: ${color};"></div>
+          </div>
         </div>
       `;
     });
     html += '</div>';
     container.innerHTML = html;
   }
+
 
   renderTopServicesList(topServices) {
     const container = document.getElementById('list-top-services');
