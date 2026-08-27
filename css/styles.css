@@ -962,22 +962,112 @@ button, input, select, textarea {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Floating WhatsApp Button */
+/* Floating WhatsApp Button & Floating Phrase Tooltip - High Visibility */
+.floating-whatsapp-wrapper {
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  z-index: 2147483647 !important; /* Maximum browser z-index */
+  pointer-events: auto !important;
+}
+
+.wa-floating-phrase {
+  background: #ffffff !important;
+  color: #191c24 !important;
+  border: 2px solid #25d366 !important;
+  border-radius: 50px !important;
+  padding: 11px 20px !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35), 0 4px 15px rgba(0, 0, 0, 0.12) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  white-space: nowrap !important;
+  animation: waFloatBounce 3s ease-in-out infinite !important;
+  transition: all 0.25s ease !important;
+  user-select: none !important;
+}
+
+.wa-floating-phrase:hover {
+  transform: translateY(-3px) scale(1.04) !important;
+  background: #f0fdf4 !important;
+  border-color: #128c7e !important;
+  box-shadow: 0 14px 35px rgba(37, 211, 102, 0.45) !important;
+}
+
+.wa-phrase-dot {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #25d366 !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  animation: dotPulse 1.5s infinite !important;
+  flex-shrink: 0 !important;
+}
+
+.wa-phrase-text {
+  color: #111827 !important;
+  font-weight: 800 !important;
+  font-size: 0.92rem !important;
+  letter-spacing: -0.2px !important;
+}
+
 .floating-whatsapp {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: #25d366;
-  color: #ffffff;
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.2rem;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-  z-index: 99;
+  position: relative !important;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
+  color: #ffffff !important;
+  width: 65px !important;
+  height: 65px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 2.3rem !important;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5) !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.12) rotate(6deg) !important;
+  box-shadow: 0 16px 40px rgba(37, 211, 102, 0.6) !important;
+}
+
+.wa-pulse-ring {
+  position: absolute !important;
+  top: -6px !important;
+  left: -6px !important;
+  right: -6px !important;
+  bottom: -6px !important;
+  border: 3px solid #25d366 !important;
+  border-radius: 50% !important;
+  animation: ringPulse 2s cubic-bezier(0.24, 0, 0.38, 1) infinite !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@keyframes waFloatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes dotPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+@keyframes ringPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { opacity: 0.4; }
+  100% { transform: scale(1.4); opacity: 0; }
 }
 
 /* ================= CRM SYSTEM ================= */
@@ -1998,26 +2088,613 @@ button, input, select, textarea {
   }
 
   .client-drawer {
-    width: 520px;
-    max-width: 85vw;
-  }
+/* ================= TOP NOTIFICATION BADGES ================= */
+.top-notif-pill {
+  background: #f59e0b;
+  color: #191c24;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  animation: pulseBadge 2s infinite;
+  transition: var(--transition);
+}
 
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+.top-notif-pill:hover {
+  background: #d97706;
+  color: #ffffff;
+  transform: scale(1.05);
+}
 
-  .signature-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.notif-bell {
+  font-size: 0.9rem;
+}
 
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
+.badge-sidebar-notif {
+  background: #f59e0b;
+  color: #191c24;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-left: auto;
+}
 
-  .location-grid {
-    grid-template-columns: 1fr;
-  }
+@keyframes pulseBadge {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ================= NUEVA SECCIÓN: OFERTAS DEL MES ================= */
+.offers-section {
+  padding: 4.5rem 1.5rem;
+  background: linear-gradient(180deg, #ffffff 0%, var(--primary-soft) 100%);
+  border-bottom: 1px solid var(--primary-border);
+}
+
+/* ================= RITUALES & COLECCIONES DEL MES ================= */
+.offers-section {
+  background: linear-gradient(180deg, #FAF6F0 0%, #FFFDF9 100%);
+  padding: 5rem 1.5rem;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.offers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.offer-card {
+  background: #ffffff;
+  border: 1px solid rgba(201, 125, 137, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 10px 30px rgba(74, 21, 33, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--burgundy) 0%, var(--primary) 100%);
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(74, 21, 33, 0.12);
+  border-color: var(--primary);
+}
+
+.offer-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.offer-badge {
+  background: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.offer-spec-tag {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  background: var(--bg-card-subtle);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.offer-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.offer-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: #fdf2f8;
+  border: 1px solid #fbcfe8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.offer-title {
+  font-family: var(--font-serif);
+  font-size: 1.38rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  line-height: 1.25;
+  margin-bottom: 0.3rem;
+}
+
+.offer-subtitle {
+  font-size: 0.86rem;
+  color: #9f4555;
+  font-weight: 600;
+}
+
+.offer-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.offer-includes-box {
+  margin-bottom: 1.5rem;
+}
+
+.includes-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--burgundy);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.offer-includes-list {
+  list-style: none;
+  background: #faf6f0;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.offer-includes-list li {
+  font-size: 0.84rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.offer-includes-list .check-icon {
+  color: #059669;
+  font-weight: bold;
+}
+
+.offer-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+}
+
+.offer-pricing {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-old-price {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-decoration: line-through;
+}
+
+.offer-current-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.offer-current-price .price-num {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--burgundy);
+}
+
+.savings-pill {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+.btn-claim-offer {
+  background: linear-gradient(135deg, var(--burgundy) 0%, #831843 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 11px 20px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(74, 21, 33, 0.25);
+  transition: var(--transition);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-claim-offer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(74, 21, 33, 0.38);
+  background: linear-gradient(135deg, #380d17 0%, var(--burgundy) 100%);
+}
+
+.offers-bottom-banner {
+  background: #ffffff;
+  border: 1.5px dashed var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.banner-icon {
+  font-size: 2.2rem;
+}
+
+.banner-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--burgundy);
+  margin-bottom: 0.25rem;
+}
+
+.banner-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+
+
+/* ================= APPOINTMENTS CRM STYLES ================= */
+.appointment-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.apt-stat-pill {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.apt-stat-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.apt-stat-icon {
+  font-size: 1.75rem;
+}
+
+.apt-stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.apt-stat-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--burgundy);
+}
+
+.stat-pending .apt-stat-val { color: #f59e0b; }
+.stat-confirmed .apt-stat-val { color: #10b981; }
+.stat-completed .apt-stat-val { color: var(--primary); }
+
+.appointments-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+.apt-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.apt-card:hover {
+  box-shadow: var(--shadow-card);
+  border-color: var(--primary-border);
+}
+
+.apt-card.is-pending {
+  border-left: 4px solid #f59e0b;
+}
+
+.apt-card.is-today {
+  background: #fdfbf7;
+}
+
+.apt-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.apt-client-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--burgundy);
+}
+
+.apt-client-phone {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.apt-service-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.apt-service-name {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 0.92rem;
+}
+
+.apt-amount-tag {
+  font-weight: 800;
+  color: var(--burgundy);
+  background: var(--primary-soft);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  font-size: 0.85rem;
+}
+
+.apt-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.badge-kiara {
+  background: #fdf4ff;
+  color: #9333ea;
+  border: 1px solid #f0abfc;
+}
+
+.badge-cielo {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.apt-notes-snippet {
+  background: var(--bg-card-subtle);
+  border-radius: var(--radius-xs);
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.apt-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border-light);
+  padding-top: 0.75rem;
+}
+
+.btn-wa-action {
+  background: #25d366;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-wa-action:hover {
+  background: #128c7e;
+}
+
+.btn-xs {
+  padding: 5px 9px;
+  font-size: 0.78rem;
+  border-radius: var(--radius-xs);
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.select-xs {
+  padding: 4px 8px;
+  font-size: 0.78rem;
+  height: 32px;
+  width: auto;
+}
+
+.select-compact {
+  max-width: 170px;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-pending { background: #fef3c7; color: #b45309; }
+.status-confirmed { background: #d1fae5; color: #065f46; }
+.status-completed { background: #f3e8ff; color: #6b21a8; }
+.status-cancelled { background: #fee2e2; color: #991b1b; }
+
+/* Dashboard Today Appointments Grid */
+.dashboard-apt-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dash-apt-card {
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  display: grid;
+  grid-template-columns: 140px 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dash-apt-time-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.apt-time-txt {
+  font-weight: 800;
+  color: var(--burgundy);
+  font-size: 0.95rem;
+}
+
+.apt-spec-txt {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.dash-apt-client {
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 0.92rem;
+}
+
+.dash-apt-service {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.dash-apt-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* Booking Success Modal */
+.success-icon-badge {
+  font-size: 3.5rem;
+  animation: bounceSuccess 1.5s infinite alternate ease-in-out;
+}
+
+.booking-ticket-box {
+  background: var(--bg-card-subtle);
+  border: 1.5px dashed var(--primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+}
+
+.ticket-label {
+  color: var(--text-muted);
+}
+
+@keyframes bounceSuccess {
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1.1); }
+}
+
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
+@media (max-width: 1024px) {
+  .crm-sidebar { width: 220px; }
+  .pos-grid { grid-template-columns: 1fr; }
+  .appointment-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .dash-apt-card { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .offers-bottom-banner { flex-direction: column; text-align: center; }
+  .banner-content { flex-direction: column; }
 }
 
 @media (max-width: 768px) {
@@ -2056,8 +2733,385 @@ button, input, select, textarea {
   .crm-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border-light); }
   .crm-main { padding: 1rem; }
   .kpi-grid { grid-template-columns: 1fr; }
+  .appointment-stats-row { grid-template-columns: 1fr; }
   .sales-summary-ribbon { grid-template-columns: repeat(2, 1fr); }
   .signature-container { grid-template-columns: 1fr; }
   .footer-container { grid-template-columns: 1fr; }
   .client-drawer { width: 100vw; max-width: 100vw; }
+  
+  .dash-apt-card {
+    grid-template-columns: 1fr;
+  }
 }
+
+@media (max-width: 600px) {
+  .floating-whatsapp-wrapper {
+    bottom: 16px;
+    right: 14px;
+    gap: 8px;
+  }
+
+  .wa-floating-phrase {
+    padding: 7px 11px;
+    font-size: 0.76rem;
+    max-width: 210px;
+    white-space: normal;
+    text-align: right;
+    line-height: 1.25;
+  }
+
+  .floating-whatsapp {
+    width: 54px;
+    height: 54px;
+    font-size: 1.8rem;
+  }
+}
+
+/* ================= ROLE SWITCHER & PRIVACY STYLES ================= */
+.top-role-wrapper {
+  margin-left: 0.5rem;
+}
+
+.role-switcher-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.role-switcher-btn.role-stylist {
+  background: #fdf2f8;
+  color: #be185d;
+  border-color: #fbcfe8;
+}
+
+.role-switcher-btn.role-stylist:hover {
+  background: #fce7f3;
+}
+
+.role-switcher-btn.role-admin {
+  background: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.role-switcher-btn.role-admin:hover {
+  background: #d1fae5;
+}
+
+.role-action-tag {
+  background: rgba(0, 0, 0, 0.08);
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.masked-revenue {
+  letter-spacing: 2px;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.lock-tag-sm {
+  font-size: 0.75rem;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  vertical-align: middle;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.lock-metric-card {
+  background: var(--bg-card-subtle);
+  border: 1.5px dashed var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lock-icon-box {
+  font-size: 2.2rem;
+}
+
+.nav-item-locked::after {
+  content: '🔒';
+  margin-left: auto;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* PIN Modal */
+.modal-pin-card {
+  max-width: 380px;
+}
+
+.pin-shield-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pin-field {
+  font-size: 1.8rem !important;
+  letter-spacing: 8px !important;
+  text-align: center !important;
+  width: 180px !important;
+  margin: 0 auto !important;
+  height: 52px !important;
+  border: 2px solid var(--primary-border) !important;
+}
+
+.pin-field:focus {
+  border-color: var(--burgundy) !important;
+  box-shadow: 0 0 0 3px rgba(74, 21, 33, 0.15) !important;
+}
+
+/* ================= 11" TABLET DEDICATED OPTIMIZATION (1024px - 1200px) ================= */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .crm-layout {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .crm-sidebar {
+    width: 210px;
+    padding: 1rem 0.5rem;
+  }
+
+  .crm-salon-title {
+    font-size: 1.15rem;
+  }
+
+  .crm-nav-item {
+    padding: 0.75rem 0.65rem;
+    font-size: 0.88rem;
+    gap: 8px;
+    min-height: 48px; /* Touch friendly */
+  }
+
+  .crm-main {
+    padding: 1.25rem 1rem;
+    flex: 1;
+    overflow-x: hidden;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+
+  .kpi-card {
+    padding: 1rem;
+  }
+
+  .kpi-val {
+    font-size: 1.45rem;
+  }
+
+  .dashboard-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .pos-checkout-card {
+    position: static;
+  }
+
+  .appointment-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .appointments-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .client-drawer {
+    width: 460px;
+    max-width: 90vw;
+  }
+
+  /* Form & Touch elements */
+  .form-input, .form-select, .btn-primary, .btn-outline {
+    min-height: 44px;
+    font-size: 0.95rem;
+  }
+
+  .table-responsive {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ================= PAYROLL & ATTENDANCE STYLES ================= */
+.payroll-controls-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.payroll-filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payroll-filter-item .form-input,
+.payroll-filter-item .form-select {
+  min-width: 180px;
+}
+
+.payroll-legal-tag {
+  margin-left: auto;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+}
+
+.payroll-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.25rem;
+}
+
+.payroll-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.payroll-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.payroll-worker-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.payroll-avatar {
+  font-size: 2.2rem;
+  background: var(--bg-card-subtle);
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-light);
+}
+
+.payroll-worker-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--burgundy);
+  margin: 0;
+}
+
+.payroll-worker-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.payroll-period-badge {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.payroll-calc-body {
+  margin-bottom: 1.25rem;
+}
+
+.payroll-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+  font-size: 0.92rem;
+}
+
+.payroll-subline {
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--border-light);
+}
+
+.payroll-net-box {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #fdfbf7 0%, #fff7ed 100%);
+  border: 1.5px solid #fed7aa;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.payroll-net-box .net-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #9a3412;
+  margin-bottom: 4px;
+}
+
+.payroll-net-box .net-amount {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--burgundy);
+}
+
+.payroll-card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.payroll-card-actions .btn-sm {
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+}
+
+
+

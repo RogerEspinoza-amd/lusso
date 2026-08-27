@@ -1,4 +1,4 @@
-﻿// Base de datos precargada y catalogos de LUSSO Salon Boutique
+// Base de datos precargada y catalogos de Lusso Beauty Salón
 window.LUSSO_SEED_DATA = {
   clients: [
     {
@@ -7359,6 +7359,201 @@ window.LUSSO_SEED_DATA = {
         "cost":  28,
         "id":  "inv-17",
         "minStock":  1,
+"duration":  40,
+        "bestSeller":  false
+    },
+    {
+        "id":  "srv-37",
+        "specialist":  "Cielo",
+        "category":  "retiros",
+        "price":  30,
+        "description":  "Retiro del refuerzo rubber manteniendo el grosor natural de la una.",
+        "name":  "Retiro de Rubber Gel",
+        "duration":  30,
+        "bestSeller":  false
+    }
+],
+  inventory: [
+    {
+        "cost":  28.5,
+        "id":  "inv-1",
+        "minStock":  8,
+        "category":  "Capilar",
+        "name":  "Tinte Alfaparf Evolution of the Color (Surtido)",
+        "brand":  "Alfaparf Milano",
+        "stock":  24,
+        "supplier":  "Alfaparf / Probela",
+        "unit":  "Tubos 60ml"
+    },
+    {
+        "cost":  35,
+        "id":  "inv-2",
+        "minStock":  3,
+        "category":  "Capilar",
+        "name":  "Oxigenta Oxido Alfaparf 20 Vol / 30 Vol",
+        "brand":  "Alfaparf Milano",
+        "stock":  6,
+        "supplier":  "Alfaparf",
+        "unit":  "Botellas 1L"
+    },
+    {
+        "cost":  95,
+        "id":  "inv-3",
+        "minStock":  2,
+        "category":  "Capilar",
+        "name":  "Decolorante BB Bleach High Lift 9 Tonos",
+        "brand":  "Alfaparf Milano",
+        "stock":  3,
+        "supplier":  "Alfaparf",
+        "unit":  "Potes 400g"
+    },
+    {
+        "cost":  12,
+        "id":  "inv-4",
+        "minStock":  6,
+        "category":  "Capilar",
+        "name":  "Ampollas Reestructurantes Semi di Lino",
+        "brand":  "Alfaparf Milano",
+        "stock":  18,
+        "supplier":  "Probela",
+        "unit":  "Ampollas 13ml"
+    },
+    {
+        "cost":  180,
+        "id":  "inv-5",
+        "minStock":  2,
+        "category":  "Capilar",
+        "name":  "Keratina Alisado Organico (Libre de Formol)",
+        "brand":  "Lusso Care",
+        "stock":  2,
+        "supplier":  "Probela",
+        "unit":  "Botellas 1L"
+    },
+    {
+        "cost":  65,
+        "id":  "inv-6",
+        "minStock":  2,
+        "category":  "Capilar",
+        "name":  "Aceite Puro de Argan (Sello de la Casa)",
+        "brand":  "Moroccanoil / Lusso",
+        "stock":  4,
+        "supplier":  "Probela",
+        "unit":  "Botellas 100ml"
+    },
+    {
+        "cost":  24,
+        "id":  "inv-7",
+        "minStock":  12,
+        "category":  "Unas",
+        "name":  "Esmaltes OPI Tradicional (Colores Variados)",
+        "brand":  "OPI",
+        "stock":  45,
+        "supplier":  "Probela",
+        "unit":  "Frascos 15ml"
+    },
+    {
+        "cost":  38,
+        "id":  "inv-8",
+        "minStock":  10,
+        "category":  "Unas",
+        "name":  "Gel UV Polish OPI / Gelcolor",
+        "brand":  "OPI",
+        "stock":  28,
+        "supplier":  "Probela",
+        "unit":  "Frascos 15ml"
+    },
+    {
+        "cost":  42,
+        "id":  "inv-9",
+        "minStock":  3,
+        "category":  "Unas",
+        "name":  "Rubber Base Coat Nude \u0026 Clear",
+        "brand":  "Mia Secret / Kokoist",
+        "stock":  5,
+        "supplier":  "Distribuidora Unas",
+        "unit":  "Frascos 15ml"
+    },
+    {
+        "cost":  32,
+        "id":  "inv-10",
+        "minStock":  2,
+        "category":  "Unas",
+        "name":  "Top Coat Gel No Wipe Ultra Brillo",
+        "brand":  "Mia Secret",
+        "stock":  4,
+        "supplier":  "Distribuidora Unas",
+        "unit":  "Frascos 15ml"
+    },
+    {
+        "cost":  58,
+        "id":  "inv-11",
+        "minStock":  2,
+        "category":  "Unas",
+        "name":  "Removedor de Callos OPI ProSpa",
+        "brand":  "OPI",
+        "stock":  2,
+        "supplier":  "Probela",
+        "unit":  "Botellas 118ml"
+    },
+    {
+        "cost":  29,
+        "id":  "inv-12",
+        "minStock":  2,
+        "category":  "Unas",
+        "name":  "Aceite de Cuticula ProSpa OPI",
+        "brand":  "OPI",
+        "stock":  5,
+        "supplier":  "Probela",
+        "unit":  "Goteros 15ml"
+    },
+    {
+        "cost":  1.2,
+        "id":  "inv-13",
+        "minStock":  30,
+        "category":  "Descartables",
+        "name":  "Limas de Unas Descartables 100/180",
+        "brand":  "Generico Pro",
+        "stock":  80,
+        "supplier":  "Distribuidora Unas",
+        "unit":  "Unidades"
+    },
+    {
+        "cost":  0.6,
+        "id":  "inv-14",
+        "minStock":  40,
+        "category":  "Descartables",
+        "name":  "Toallas Desechables Spunlace",
+        "brand":  "CleanPro",
+        "stock":  120,
+        "supplier":  "Mercado Central / Probela",
+        "unit":  "Unidades"
+    },
+    {
+        "cost":  26,
+        "id":  "inv-15",
+        "minStock":  2,
+        "category":  "Descartables",
+        "name":  "Guantes de Nitrilo Rosa (Talla S/M)",
+        "brand":  "Cranberry",
+        "stock":  2,
+        "supplier":  "Farmacia / Distribuidora",
+        "unit":  "Cajas x100"
+    },
+    {
+        "cost":  2,
+        "id":  "inv-16",
+        "minStock":  4,
+        "category":  "Bebidas",
+        "name":  "Agua Mineral Loa 1L / 500ml",
+        "brand":  "Loa",
+        "stock":  8,
+        "supplier":  "Bodega / Metro",
+        "unit":  "Botellas"
+    },
+    {
+        "cost":  28,
+        "id":  "inv-17",
+        "minStock":  1,
         "category":  "Bebidas",
         "name":  "Cafe en Grano Premium Espresso",
         "brand":  "Cafe Chanchamayo",
@@ -7371,30 +7566,188 @@ window.LUSSO_SEED_DATA = {
     {
         "id":  "tm-1",
         "name":  "Kiara",
-        "avatar":  "ðŸ’‡â€â™€ï¸",
+        "avatar":  "💇‍♀️",
         "specialties":  [
-                            "Corte \u0026 Visagismo",
-                            "Colorimetria \u0026 Mechas Balayage",
-                            "Tratamientos Capilares \u0026 Botox",
-                            "Alisados Organicos",
-                            "Peinados \u0026 Brushing"
+                            "Corte & Visagismo",
+                            "Colorimetría & Mechas Balayage",
+                            "Tratamientos Capilares & Bótox",
+                            "Alisados Orgánicos",
+                            "Peinados & Brushing"
                         ],
-        "role":  "Estilista Master \u0026 Colorista",
-        "bio":  "Especialista en transformacion y salud capilar con mas de 7 anos de experiencia. Su sello es el cuidado extremo de la fibra con aceite de argan y diagnosticos personalizados."
+        "role":  "Estilista Master & Colorista",
+        "bio":  "Especialista en transformación y salud capilar con más de 7 años de experiencia. Su sello es el cuidado extremo de la fibra con aceite de argán y diagnósticos personalizados."
     },
     {
         "id":  "tm-2",
         "name":  "Cielo",
-        "avatar":  "ðŸ’…",
+        "avatar":  "💅",
         "specialties":  [
-                            "Manicure Gel UV \u0026 Rubber",
+                            "Manicure Gel UV & Rubber",
                             "Pedicure Spa Premium OPI",
-                            "Unas Acrilicas \u0026 Polygel",
-                            "Lifting de Pestanas \u0026 Cejas",
-                            "Depilacion con Hilo"
+                            "Uñas Acrílicas & Polygel",
+                            "Lifting de Pestañas & Cejas",
+                            "Depilación con Hilo"
                         ],
-        "role":  "Nail Artist \u0026 Esteticista",
-        "bio":  "Experta en diseno y salud de unas naturales y extensiones. Destacada por su prolijidad, higiene rigurosa y disenos en tendencia."
+        "role":  "Nail Artist & Esteticista",
+        "bio":  "Experta en diseño y salud de uñas naturales y extensiones. Destacada por su prolijidad, higiene rigurosa y diseños en tendencia."
     }
-]
+  ],
+  staff: [
+    {
+      "id": "st-1",
+      "name": "Kiara",
+      "role": "Estilista Master & Colorista",
+      "avatar": "💇‍♀️",
+      "baseSalary": 1600,
+      "phone": "982799999",
+      "calculationBaseDays": 30
+    },
+    {
+      "id": "st-2",
+      "name": "Cielo",
+      "role": "Nail Artist & Esteticista",
+      "avatar": "💅",
+      "baseSalary": 1400,
+      "phone": "993511745",
+      "calculationBaseDays": 30
+    }
+  ],
+  absences: [
+    {
+      "id": "abs-1",
+      "specialist": "Kiara",
+      "date": "2026-08-11",
+      "type": "falta_completa",
+      "reason": "Trámite personal / Inasistencia",
+      "amount": -53.33,
+      "notes": "Avisó con anticipación",
+      "month": "2026-08"
+    },
+    {
+      "id": "abs-2",
+      "specialist": "Cielo",
+      "date": "2026-08-15",
+      "type": "feriado_trabajado",
+      "reason": "Acuerdo feriado trabajado normal",
+      "amount": 46.67,
+      "notes": "Turno completo en día feriado",
+      "month": "2026-08"
+    },
+    {
+      "id": "abs-3",
+      "specialist": "Cielo",
+      "date": "2026-08-20",
+      "type": "propina_tarjeta",
+      "reason": "Propinas acumuladas de clientas en tarjeta",
+      "amount": 85.00,
+      "notes": "100% íntegro sin retención de comisión",
+      "month": "2026-08"
+    }
+  ],
+  monthlyOffers: [
+    {
+      "id": "promo-1",
+      "title": "Ritual Dúo Lusso Glow",
+      "subtitle": "Manicure Gel UV OPI + Bótox Capilar & Brushing con Argán",
+      "specialist": "Kiara & Cielo (Sesión Simultánea)",
+      "category": "tratamientos",
+      "regularPrice": 200,
+      "offerPrice": 149,
+      "savings": 51,
+      "badge": "👑 RITUAL DÚO ESTRELLA",
+      "description": "Nuestra experiencia de belleza más exclusiva para renovar tus manos y revitalizar tu cabello en solo 90 minutos. Atención personalizada al mismo tiempo por Kiara y Cielo.",
+      "includes": [
+        "Manicure Gel UV OPI de larga duración (3 semanas)",
+        "Diagnóstico capilar & Lavado revitalizante con masaje",
+        "Tratamiento Bótox Capilar de nutrición y reconstrucción",
+        "Sellado térmico con Aceite Puro de Argán & Brushing final"
+      ],
+      "icon": "✨"
+    },
+    {
+      "id": "promo-2",
+      "title": "Spa Integral Manos & Pies OPI",
+      "subtitle": "Manicure Gel UV + Pedicure Spa Terapéutica con Sales",
+      "specialist": "Cielo",
+      "category": "manicure",
+      "regularPrice": 130,
+      "offerPrice": 105,
+      "savings": 25,
+      "badge": "💅 EXPERIENCIA SPA OPI",
+      "description": "Set completo de embellecimiento y descanso. Esmaltado en gel de alta duración para tus manos combinado con un relajante spa de pies con exfoliación y sales minerales.",
+      "includes": [
+        "Esmaltado Gel UV en manos con color a elección",
+        "Spa de pies completo con sales relajantes de lavanda",
+        "Exfoliación profunda y removedor de callos OPI ProSpa",
+        "Baño nutritivo de aceite de cutícula y crema humectante"
+      ],
+      "icon": "💅"
+    },
+    {
+      "id": "promo-3",
+      "title": "Alisado Orgánico & Brillo Marroquí",
+      "subtitle": "Alisado Progresivo Libre de Formol + Corte Visagista",
+      "specialist": "Kiara",
+      "category": "tratamientos",
+      "regularPrice": 250,
+      "offerPrice": 189,
+      "savings": 61,
+      "badge": "🌿 100% LIBRE DE FORMOL",
+      "description": "Transformación capilar para lucir un lacio sedoso, brillante y completamente libre de frizz, cuidando la integridad de tu fibra con extractos botánicos y argán puro.",
+      "includes": [
+        "Alisado progresivo orgánico apto para todo tipo de cabello",
+        "Corte de puntas visagista para estilizar tu rostro",
+        "Lavado post-tratamiento con mascarilla de argán selladora",
+        "Peinado y finalización con brillo espejo"
+      ],
+      "icon": "🌿"
+    },
+    {
+      "id": "promo-4",
+      "title": "Mirada Radiante & Uñas Rubber Gel",
+      "subtitle": "Lifting de Pestañas con Keratina + Base Rubber Estructurada",
+      "specialist": "Cielo",
+      "category": "manicure",
+      "regularPrice": 140,
+      "offerPrice": 109,
+      "savings": 31,
+      "badge": "👁️ MIRADA & UÑAS CHIC",
+      "description": "El combo perfecto para un look natural impecable todos los días. Realce de tu propia mirada sin extensiones pesadas y refuerzo de uñas naturales con base densa rubber.",
+      "includes": [
+        "Lifting de pestañas naturales con nutrición de keratina",
+        "Tinte negro intenso para efecto de máscara permanente",
+        "Manicura y refuerzo estructurado con Rubber Gel",
+        "Masaje hidratante de manos y aceite de argán"
+      ],
+      "icon": "💎"
+    }
+  ],
+  appointments: [
+    {
+      "id": "apt-101",
+      "clientName": "Camila Navarro",
+      "clientPhone": "993511745",
+      "service": "Dúo Manos & Pies Spa OPI (Oferta del Mes)",
+      "specialist": "Cielo",
+      "date": "2026-08-28",
+      "time": "11:30 AM",
+      "status": "pending",
+      "notes": "Reserva online desde landing page",
+      "amount": 105,
+      "createdAt": "2026-08-27T16:40:00"
+    },
+    {
+      "id": "apt-102",
+      "clientName": "Luciana Valdivia",
+      "clientPhone": "982799999",
+      "service": "Alisado Orgánico Marroquí",
+      "specialist": "Kiara",
+      "date": "2026-08-28",
+      "time": "03:30 PM",
+      "status": "confirmed",
+      "notes": "Cabello largo, viene por recomendación",
+      "amount": 200,
+      "createdAt": "2026-08-27T15:20:00"
+    }
+  ]
 };

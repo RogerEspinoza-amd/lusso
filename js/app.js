@@ -1,5 +1,5 @@
 /**
- * LUSSO Salon Boutique - App Core Router & View Manager
+ * Lusso Beauty Salón - App Core Router & View Manager
  */
 
 class LussoApp {
