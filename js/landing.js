@@ -125,8 +125,8 @@ class LussoLanding {
               </div>
             </div>
 
-            <button class="btn-claim-offer" onclick="window.lussoLanding.openBookingModal('${promo.title} (Colección del Mes)', '${promo.specialist}', ${promo.offerPrice})">
-              <span>Reservar Ritual</span> ✨
+            <button class="btn-claim-offer" onclick="window.lussoLanding.openBookingModal('${promo.title}', '${promo.specialist}', ${promo.offerPrice})">
+              <span>Reservar en WhatsApp</span> 💬
             </button>
           </div>
         </div>

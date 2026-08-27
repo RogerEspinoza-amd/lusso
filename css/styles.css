@@ -2775,42 +2775,50 @@ button, input, select, textarea {
 .role-switcher-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
+  gap: 8px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
   transition: var(--transition);
-  border: 1px solid transparent;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .role-switcher-btn.role-stylist {
-  background: #fdf2f8;
-  color: #be185d;
-  border-color: #fbcfe8;
+  color: var(--burgundy);
 }
 
 .role-switcher-btn.role-stylist:hover {
-  background: #fce7f3;
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(74, 21, 33, 0.1);
 }
 
 .role-switcher-btn.role-admin {
-  background: #ecfdf5;
   color: #065f46;
   border-color: #a7f3d0;
+  background: #f0fdf4;
 }
 
 .role-switcher-btn.role-admin:hover {
-  background: #d1fae5;
+  background: #dcfce7;
+  box-shadow: 0 2px 8px rgba(6, 95, 70, 0.12);
 }
 
 .role-action-tag {
-  background: rgba(0, 0, 0, 0.08);
-  padding: 2px 6px;
+  background: #fdf2f8;
+  color: #9d174d;
+  padding: 2px 8px;
   border-radius: var(--radius-full);
   font-size: 0.72rem;
   font-weight: 800;
+}
+
+.role-switcher-btn.role-admin .role-action-tag {
+  background: #dcfce7;
+  color: #15803d;
 }
 
 .masked-revenue {
