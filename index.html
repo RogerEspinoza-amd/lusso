@@ -159,16 +159,14 @@
       </div>
     </section>
 
-    <!-- ================= NUEVA SECCIÓN: OFERTAS ESPECIALES DEL MES ================= -->
+    <!-- ================= RITUALES & COLECCIONES DEL MES ================= -->
     <section id="ofertas" class="offers-section">
       <div class="offers-container">
         <div class="section-header-centered">
-          <div class="offers-pill-header">
-            <span>🔥 PROMOCIONES EXCLUSIVAS</span>
-          </div>
-          <h2 class="section-title">Ofertas Especiales del Mes</h2>
+          <span class="section-subtitle">Edición Limitada • Miraflores</span>
+          <h2 class="section-title">Rituales & Colecciones del Mes</h2>
           <p class="section-desc">
-            Aprovecha nuestros paquetes y rituales combinados a un precio preferencial. ¡Agenda tu cita antes de que se agoten los cupos disponibles!
+            Experiencias combinadas de alta belleza diseñadas por Kiara y Cielo. Disfruta de un cuidado integral para tu cabello, manos y mirada con tarifas preferenciales.
           </p>
         </div>
 
@@ -178,10 +176,10 @@
 
         <div class="offers-bottom-banner">
           <div class="banner-content">
-            <span class="banner-icon">💖</span>
+            <span class="banner-icon">✨</span>
             <div>
-              <h4 class="banner-title">¿Deseas personalizar tu paquete o consultar una combinación?</h4>
-              <p class="banner-desc">Escríbenos directamente por WhatsApp y te asesoramos al instante según tu tipo de cabello o uñas.</p>
+              <h4 class="banner-title">¿Deseas personalizar tu ritual o consultar por una combinación especial?</h4>
+              <p class="banner-desc">Escríbenos directamente por WhatsApp y te asesoramos al instante según el estado de tu fibra capilar o diseño de uñas deseado.</p>
             </div>
           </div>
           <button class="btn-primary banner-btn" onclick="window.lussoLanding.openBookingModal()">
@@ -464,6 +462,20 @@
 
       <!-- Main CRM Content Area -->
       <main class="crm-main">
+
+        <!-- Role Privacy Status Banner inside CRM -->
+        <div id="crm-role-status-banner" class="crm-role-banner banner-stylist mb-4">
+          <div class="role-banner-left">
+            <span id="role-banner-icon" class="role-banner-icon">💅</span>
+            <div>
+              <strong id="role-banner-title">Modo Estilista / Recepción Activo</strong>
+              <p id="role-banner-desc" class="text-xs">Métricas de facturación protegidas. Kiara y Cielo pueden gestionar agenda, clientas, fórmulas y POS.</p>
+            </div>
+          </div>
+          <button id="btn-role-action" class="btn-role-action" onclick="window.lussoCRM.handleRoleClick()">
+            <span id="role-action-text">🔑 Desbloquear Dueña con PIN</span>
+          </button>
+        </div>
 
         <!-- TAB 1: DASHBOARD -->
         <section id="tab-dashboard" class="crm-tab-content active">
@@ -1625,7 +1637,24 @@
           <div class="pin-input-container">
             <input type="password" id="input-admin-pin" class="form-input pin-field" maxlength="6" inputmode="numeric" placeholder="••••" autocomplete="off" required>
           </div>
-          <p class="text-xs text-muted mt-2">PIN por defecto: <strong>2026</strong></p>
+          
+          <!-- Touch Numpad for Tablet/Mobile Ergonomics -->
+          <div class="pin-numpad-grid mt-3">
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('1')">1</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('2')">2</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('3')">3</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('4')">4</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('5')">5</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('6')">6</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('7')">7</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('8')">8</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('9')">9</button>
+            <button type="button" class="numpad-key numpad-action" onclick="window.lussoCRM.clearPin()">C</button>
+            <button type="button" class="numpad-key" onclick="window.lussoCRM.appendPinDigit('0')">0</button>
+            <button type="button" class="numpad-key numpad-action" onclick="window.lussoCRM.deletePinDigit()">⌫</button>
+          </div>
+
+          <p class="text-xs text-muted mt-3">PIN predeterminado: <strong>2026</strong> o <strong>1234</strong></p>
           <div id="pin-error-msg" class="text-xs text-red mt-2 hidden font-bold">⚠️ PIN incorrecto. Inténtalo de nuevo.</div>
         </div>
         <div class="modal-footer justify-center">
